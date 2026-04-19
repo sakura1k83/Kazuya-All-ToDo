@@ -1,0 +1,202 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：eBay Developer Account の Client ID / Client Secret を取得・確認する",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "相和　助成金補正作業",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": ["コンサル・IT支援"],
+      "due": "2026-04-14",
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "虎虎ファクトリーコンサル内容提案資料",
+      "status": "進行中",
+      "priority": "🟡 高",
+      "tags": ["コンサル・IT支援"],
+      "due": "2026-04-15",
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "5",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：フロントエンドの画面レイアウト・画面遷移を設計する",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：Node.js ローカルサーバーの構成・APIエンドポイントを設計する",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：クレーム対応の既存テンプレ・対応フローを棚卸しする",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：Web検索API選定・準備（Perplexity / Google Custom Search 等）",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "9",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：テンプレート管理画面（追加・編集・削除）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "10",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：クレーム対応の定型文テンプレート選択・適用機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "11",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：返信エディタ（日本語入力・翻訳ボタン付き）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "12",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：未返信メッセージ一覧画面を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "13",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：Web検索APIと連携して返信案生成時に最新情報を取得する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "14",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：AI APIで商品情報＋Web検索結果を踏まえた返信案を生成するボタンを実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "15",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：AI APIで英語↔日本語の翻訳機能を実装する（返信文の変換）",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "16",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay APIでバイヤーへのメッセージ返信を送信する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "17",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay APIでバイヤーからのメッセージ一覧を取得する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "18",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay OAuth認証フロー（アクセストークン取得）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "19",
+      "name": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "20",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 整備：ローカル起動手順・設定方法のドキュメントを作成する",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "21",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：本番環境（Production）に切り替えて最終動作確認する",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "22",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：eBay Sandbox環境で全機能を動作確認・デバッグする",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": ["eBay事業"],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    }
+  ]
+}
