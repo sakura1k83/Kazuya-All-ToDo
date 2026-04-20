@@ -1,0 +1,18 @@
+{
+  "name": "かずや's ToDo",
+  "short_name": "ToDo",
+  "description": "Summit Luxe Sakura / K'nMing Advisory タスク管理",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#1a1a2e",
+  "background_color": "#f0f2f5",
+  "display": "standalone",
+  "start_url": ".",
+  "lang": "ja"
+}
