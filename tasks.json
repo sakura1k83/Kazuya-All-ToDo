@@ -1,6 +1,18 @@
 {
   "tasks": [
     {
+      "id": "mo70a3g1nvyp",
+      "name": "シミズ技興/スキャナ導入支援",
+      "priority": "🟢 中",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": null,
+      "status": "進行中",
+      "memo": "２０２６０１０９追記\n残業の処理の関係で問題発生\n一旦ペンディングとする",
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    },
+    {
       "id": "1",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
       "status": "未着手",
