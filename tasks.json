@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo89zfd0vv6o",
+      "name": "dカードゴールド➡dカードへ変更",
+      "priority": "🟡 高",
+      "tags": [
+        "全社"
+      ],
+      "due": "2026-04-30",
+      "status": "未着手",
+      "memo": null,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -6
+    },
+    {
       "id": "mo89yysaba29",
       "name": "MyDoCoMoプラン変更検討",
       "priority": "🟡 高",
