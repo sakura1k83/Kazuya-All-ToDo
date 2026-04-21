@@ -1,6 +1,20 @@
 {
   "tasks": [
     {
+      "id": "mo8aj5kxhni9",
+      "name": "eBayリサーチツール開発",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "isProject": true,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -11
+    },
+    {
       "id": "mo8ah1wyjw3u",
       "name": "eBayバイヤーメッセージツール/HTMLアプリ",
       "priority": "🟡 高",
@@ -158,62 +172,6 @@
       "createdAt": "2026-04-20T00:00:00Z",
       "completedAt": "2026-04-20T08:55:18.074Z",
       "order": 4
-    },
-    {
-      "id": "7",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：クレーム対応の既存テンプレ・対応フローを棚卸しする",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 7,
-      "memo": null,
-      "isProject": false
-    },
-    {
-      "id": "8",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：Web検索API選定・準備（Perplexity / Google Custom Search 等）",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 8,
-      "memo": null,
-      "isProject": false
-    },
-    {
-      "id": "9",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：テンプレート管理画面（追加・編集・削除）を実装する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 9,
-      "memo": null,
-      "isProject": false
-    },
-    {
-      "id": "10",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：クレーム対応の定型文テンプレート選択・適用機能を実装する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 10,
-      "memo": null,
-      "isProject": false
     },
     {
       "id": "19",
