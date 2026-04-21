@@ -1,6 +1,20 @@
 {
   "tasks": [
     {
+      "id": "mo8azfxvk5v1",
+      "name": "バイク",
+      "priority": "🟢 中",
+      "tags": [
+        "全社"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": "バンデージ、トリプルツリー、1インチハンドル、タンク（ミドルマウント）、リアフラットフェンダー、ソロシート、ピレットサスペンション、バラクラバ、ペダルの皮、道具入れ",
+      "isProject": false,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -15
+    },
+    {
       "id": "mo8au7t3a0wa",
       "name": "ShippingPolicy　2500＄以上",
       "priority": "🟢 中",
