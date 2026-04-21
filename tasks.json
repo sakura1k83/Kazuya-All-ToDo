@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo8bg2crph8v",
+      "name": "映画　サンクチュアリ",
+      "priority": "🟢 中",
+      "tags": [],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "itemType": "wish",
+      "isProject": false,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -16
+    },
+    {
       "id": "mo8azfxvk5v1",
       "name": "バイク",
       "priority": "🟢 中",
@@ -12,7 +25,8 @@
       "memo": "バンデージ、トリプルツリー、1インチハンドル、タンク（ミドルマウント）、リアフラットフェンダー、ソロシート、ピレットサスペンション、バラクラバ、ペダルの皮、道具入れ",
       "isProject": false,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -15
+      "order": -15,
+      "itemType": "task"
     },
     {
       "id": "mo8au7t3a0wa",
@@ -26,7 +40,8 @@
       "memo": null,
       "isProject": false,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -14
+      "order": -14,
+      "itemType": "task"
     },
     {
       "id": "mo8at2dfk8qh",
@@ -40,7 +55,8 @@
       "memo": "フォートナイト",
       "isProject": false,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -13
+      "order": -13,
+      "itemType": "task"
     },
     {
       "id": "mo8asqhhcv4y",
@@ -54,7 +70,8 @@
       "memo": "ロブロックス",
       "isProject": false,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -12
+      "order": -12,
+      "itemType": "task"
     },
     {
       "id": "mo8aj5kxhni9",
@@ -68,7 +85,8 @@
       "memo": null,
       "isProject": true,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -11
+      "order": -11,
+      "itemType": "project"
     },
     {
       "id": "mo8ah1wyjw3u",
@@ -82,7 +100,8 @@
       "memo": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
       "isProject": true,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -10
+      "order": -10,
+      "itemType": "project"
     },
     {
       "id": "mo8a1iovpm7c",
@@ -95,7 +114,8 @@
       "status": "進行中",
       "memo": null,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -9
+      "order": -9,
+      "itemType": "task"
     },
     {
       "id": "mo8a15a5oyrm",
@@ -108,7 +128,8 @@
       "status": "進行中",
       "memo": "更正の請求に関して、更正がまだされないが、どうなっているか？\n市役所と税務署へ確認ししてみる！",
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -8
+      "order": -8,
+      "itemType": "task"
     },
     {
       "id": "mo8a0d23canc",
@@ -121,7 +142,8 @@
       "status": "進行中",
       "memo": null,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -7
+      "order": -7,
+      "itemType": "task"
     },
     {
       "id": "mo89zfd0vv6o",
@@ -134,7 +156,8 @@
       "status": "未着手",
       "memo": null,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -6
+      "order": -6,
+      "itemType": "task"
     },
     {
       "id": "mo89yysaba29",
@@ -147,7 +170,8 @@
       "status": "進行中",
       "memo": null,
       "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -5
+      "order": -5,
+      "itemType": "task"
     },
     {
       "id": "mo89y5ek72ti",
@@ -162,7 +186,8 @@
       "memo": null,
       "createdAt": "2026-04-21T00:00:00.000Z",
       "order": -4,
-      "completedAt": "2026-04-21T07:00:25.436Z"
+      "completedAt": "2026-04-21T07:00:25.436Z",
+      "itemType": "task"
     },
     {
       "id": "mo89vuit4dvg",
@@ -175,7 +200,8 @@
       "status": "未着手",
       "memo": null,
       "createdAt": "2026-04-21T06:58:38.021Z",
-      "order": -3
+      "order": -3,
+      "itemType": "task"
     },
     {
       "id": "mo7c1eyfurcn",
@@ -188,7 +214,8 @@
       "status": "未着手",
       "memo": null,
       "createdAt": "2026-04-20T15:11:10.839Z",
-      "order": -2
+      "order": -2,
+      "itemType": "task"
     },
     {
       "id": "mo7al7bmwlid",
@@ -201,7 +228,8 @@
       "status": "進行中",
       "memo": null,
       "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": -1
+      "order": -1,
+      "itemType": "task"
     },
     {
       "id": "mo70a3g1nvyp",
@@ -214,7 +242,8 @@
       "status": "進行中",
       "memo": "２０２６０１０９追記\n残業の処理の関係で問題発生\n一旦ペンディングとする",
       "createdAt": "2025-11-01T00:00:00.000Z",
-      "order": 1
+      "order": 1,
+      "itemType": "task"
     },
     {
       "id": "4",
@@ -227,7 +256,8 @@
       "due": "2026-04-15",
       "createdAt": "2026-04-20T00:00:00Z",
       "completedAt": "2026-04-20T08:55:18.074Z",
-      "order": 4
+      "order": 4,
+      "itemType": "task"
     }
   ]
 }
