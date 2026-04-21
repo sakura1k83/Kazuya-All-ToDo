@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo8bgjg04p2k",
+      "name": "映画　不適切にもほどがある",
+      "priority": "🟢 中",
+      "tags": [],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "itemType": "wish",
+      "isProject": false,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -17
+    },
+    {
       "id": "mo8bg2crph8v",
       "name": "映画　サンクチュアリ",
       "priority": "🟢 中",
