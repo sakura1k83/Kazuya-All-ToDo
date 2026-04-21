@@ -218,14 +218,16 @@
     {
       "id": "8",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：Web検索API選定・準備（Perplexity / Google Custom Search 等）",
-      "status": "未着手",
+      "status": "進行中",
       "priority": "🟡 高",
       "tags": [
         "eBay事業"
       ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 8
+      "due": "2026-05-06",
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "order": 8,
+      "memo": null,
+      "isProject": true
     },
     {
       "id": "9",
