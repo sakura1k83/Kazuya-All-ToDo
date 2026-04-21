@@ -23,9 +23,9 @@
       ],
       "due": null,
       "status": "未着手",
-      "memo": null,
+      "memo": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
       "isProject": true,
-      "createdAt": "2026-04-21T07:15:07.378Z",
+      "createdAt": "2026-04-21T00:00:00.000Z",
       "order": -10
     },
     {
