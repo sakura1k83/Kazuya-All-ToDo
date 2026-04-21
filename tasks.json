@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo8a0d23canc",
+      "name": "R7年分　課税仕入れ判断資料DL",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": "2026-05-06",
+      "status": "進行中",
+      "memo": null,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -7
+    },
+    {
       "id": "mo89zfd0vv6o",
       "name": "dカードゴールド➡dカードへ変更",
       "priority": "🟡 高",
