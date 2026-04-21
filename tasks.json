@@ -1,6 +1,20 @@
 {
   "tasks": [
     {
+      "id": "mo8at2dfk8qh",
+      "name": "紘斗のゲーム関連",
+      "priority": "🟢 中",
+      "tags": [
+        "全社"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": "フォートナイト",
+      "isProject": false,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -13
+    },
+    {
       "id": "mo8asqhhcv4y",
       "name": "紘斗のゲーム関連",
       "priority": "🟢 中",
