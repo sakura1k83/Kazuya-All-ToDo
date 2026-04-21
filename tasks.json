@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo8a1iovpm7c",
+      "name": "ahamoへ切り替え実施",
+      "priority": "🟡 高",
+      "tags": [
+        "全社"
+      ],
+      "due": null,
+      "status": "進行中",
+      "memo": null,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -9
+    },
+    {
       "id": "mo8a15a5oyrm",
       "name": "シミズ技興清水祐太さん\n\nR6年住民税",
       "priority": "🔴 最優先",
