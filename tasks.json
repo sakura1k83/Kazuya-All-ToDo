@@ -1,6 +1,20 @@
 {
   "tasks": [
     {
+      "id": "mo8ah1wyjw3u",
+      "name": "eBayバイヤーメッセージツール/HTMLアプリ",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "isProject": true,
+      "createdAt": "2026-04-21T07:15:07.378Z",
+      "order": -10
+    },
+    {
       "id": "mo8a1iovpm7c",
       "name": "ahamoへ切り替え実施",
       "priority": "🟡 高",
