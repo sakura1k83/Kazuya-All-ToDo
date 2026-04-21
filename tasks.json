@@ -147,34 +147,6 @@
       "order": 1
     },
     {
-      "id": "1",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 2,
-      "memo": null,
-      "isProject": true
-    },
-    {
-      "id": "2",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：eBay Developer Account の Client ID / Client Secret を取得・確認する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 3,
-      "memo": null,
-      "isProject": true
-    },
-    {
       "id": "4",
       "name": "虎虎ファクトリーコンサル内容提案資料",
       "status": "完了",
@@ -188,34 +160,6 @@
       "order": 4
     },
     {
-      "id": "5",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：フロントエンドの画面レイアウト・画面遷移を設計する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 5,
-      "memo": null,
-      "isProject": true
-    },
-    {
-      "id": "6",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：Node.js ローカルサーバーの構成・APIエンドポイントを設計する",
-      "status": "進行中",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": 6,
-      "memo": null,
-      "isProject": true
-    },
-    {
       "id": "7",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：クレーム対応の既存テンプレ・対応フローを棚卸しする",
       "status": "進行中",
@@ -227,7 +171,7 @@
       "createdAt": "2026-04-20T00:00:00.000Z",
       "order": 7,
       "memo": null,
-      "isProject": true
+      "isProject": false
     },
     {
       "id": "8",
@@ -241,7 +185,7 @@
       "createdAt": "2026-04-20T00:00:00.000Z",
       "order": 8,
       "memo": null,
-      "isProject": true
+      "isProject": false
     },
     {
       "id": "9",
@@ -255,7 +199,7 @@
       "createdAt": "2026-04-20T00:00:00.000Z",
       "order": 9,
       "memo": null,
-      "isProject": true
+      "isProject": false
     },
     {
       "id": "10",
@@ -269,55 +213,7 @@
       "createdAt": "2026-04-20T00:00:00.000Z",
       "order": 10,
       "memo": null,
-      "isProject": true
-    },
-    {
-      "id": "11",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：返信エディタ（日本語入力・翻訳ボタン付き）を実装する",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 11
-    },
-    {
-      "id": "15",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：AI APIで英語↔日本語の翻訳機能を実装する（返信文の変換）",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 15
-    },
-    {
-      "id": "17",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay APIでバイヤーからのメッセージ一覧を取得する機能を実装する",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 17
-    },
-    {
-      "id": "18",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay OAuth認証フロー（アクセストークン取得）を実装する",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 18
+      "isProject": false
     },
     {
       "id": "19",
