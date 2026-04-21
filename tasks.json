@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "mo89y5ek72ti",
+      "name": "市川商会\n省力化補助金\n８％　着手10万円（済）",
+      "priority": "🟢 中",
+      "tags": [
+        "コンサル・IT支援",
+        "会計事務所"
+      ],
+      "due": "2026-05-31",
+      "status": "完了",
+      "memo": null,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -4,
+      "completedAt": "2026-04-21T07:00:25.436Z"
+    },
+    {
       "id": "mo89vuit4dvg",
       "name": "虎虎　資料作成",
       "priority": "🟡 高",
