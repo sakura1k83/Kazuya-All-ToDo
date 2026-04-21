@@ -232,14 +232,16 @@
     {
       "id": "9",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：テンプレート管理画面（追加・編集・削除）を実装する",
-      "status": "未着手",
-      "priority": "🟢 中",
+      "status": "進行中",
+      "priority": "🟡 高",
       "tags": [
         "eBay事業"
       ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 9
+      "due": "2026-05-06",
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "order": 9,
+      "memo": null,
+      "isProject": true
     },
     {
       "id": "10",
