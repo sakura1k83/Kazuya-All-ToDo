@@ -135,14 +135,16 @@
     {
       "id": "1",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
-      "status": "未着手",
-      "priority": "🔴 最優先",
+      "status": "進行中",
+      "priority": "🟡 高",
       "tags": [
         "eBay事業"
       ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "order": 2
+      "due": "2026-05-06",
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "order": 2,
+      "memo": null,
+      "isProject": true
     },
     {
       "id": "2",
