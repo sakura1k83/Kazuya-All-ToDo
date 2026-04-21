@@ -1,6 +1,19 @@
 {
   "tasks": [
     {
+      "id": "mo89yysaba29",
+      "name": "MyDoCoMoプラン変更検討",
+      "priority": "🟡 高",
+      "tags": [
+        "全社"
+      ],
+      "due": "2026-04-30",
+      "status": "進行中",
+      "memo": null,
+      "createdAt": "2026-04-21T00:00:00.000Z",
+      "order": -5
+    },
+    {
       "id": "mo89y5ek72ti",
       "name": "市川商会\n省力化補助金\n８％　着手10万円（済）",
       "priority": "🟢 中",
