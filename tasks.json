@@ -153,10 +153,11 @@
       ],
       "due": "2026-05-06",
       "status": "進行中",
-      "memo": null,
+      "memo": "メルカリ\nAmazon\nジョーシン\nモノタロウ\nサウンドハウス\n金津屋商店\nタナカ金物\nディノス\nトラノテ\nヨドバシカメラ\nラクスル\nたのめーる\n医道の日本社",
       "createdAt": "2026-04-21T00:00:00.000Z",
       "order": -7,
-      "itemType": "task"
+      "itemType": "task",
+      "isProject": false
     },
     {
       "id": "mo89zfd0vv6o",
