@@ -69,12 +69,13 @@
         "eBay事業"
       ],
       "due": "2026-04-24",
-      "status": "未着手",
+      "status": "完了",
       "memo": "https://docs.google.com/spreadsheets/d/1fMXGcQozfZGO7qz8_MWmYd6MADmMTlVt4xi3FHWZsYQ/edit?usp=sharing",
       "createdAt": "2026-04-23T00:00:00.000Z",
       "order": -18,
       "itemType": "task",
-      "isProject": false
+      "isProject": false,
+      "completedAt": "2026-04-23T05:52:55.456Z"
     },
     {
       "id": "mo8bgjg04p2k",
