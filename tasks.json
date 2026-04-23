@@ -58,7 +58,8 @@
       "memo": "https://docs.google.com/spreadsheets/d/1fMXGcQozfZGO7qz8_MWmYd6MADmMTlVt4xi3FHWZsYQ/edit?usp=sharing",
       "createdAt": "2026-04-23T00:00:00.000Z",
       "order": -18,
-      "itemType": "task"
+      "itemType": "task",
+      "isProject": false
     },
     {
       "id": "mo8bgjg04p2k",
