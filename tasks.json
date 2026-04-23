@@ -81,9 +81,11 @@
       "id": "mo8bgjg04p2k",
       "name": "映画　不適切にもほどがある",
       "priority": "🟢 中",
-      "tags": [],
+      "tags": [
+        "全社"
+      ],
       "due": null,
-      "status": "未着手",
+      "status": "進行中",
       "memo": null,
       "itemType": "wish",
       "isProject": false,
