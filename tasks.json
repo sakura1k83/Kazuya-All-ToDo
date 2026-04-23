@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "moaykvs0gyex",
+      "name": "伊藤測量　給与入力",
+      "priority": "🟢 中",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-04-23",
+      "status": "進行中",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-23T00:00:00.000Z",
+      "order": -21
+    },
+    {
       "id": "moatti21zcpo",
       "name": "日本郵便系のShippingPolicyを既存にマージする",
       "priority": "🟡 高",
