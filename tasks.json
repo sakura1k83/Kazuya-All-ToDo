@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "moatti21zcpo",
+      "name": "日本郵便系のShippingPolicyを既存にマージする",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": "2026-05-06",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-23T00:00:00.000Z",
+      "order": -20
+    },
+    {
       "id": "moarkomjzml6",
       "name": "長崎電機商会\n決算手続き",
       "priority": "🔴 最優先",
