@@ -8,12 +8,13 @@
         "会計事務所"
       ],
       "due": "2026-04-23",
-      "status": "進行中",
+      "status": "完了",
       "memo": null,
       "itemType": "task",
       "isProject": false,
       "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -21
+      "order": -21,
+      "completedAt": "2026-04-23T04:15:48.281Z"
     },
     {
       "id": "moatti21zcpo",
