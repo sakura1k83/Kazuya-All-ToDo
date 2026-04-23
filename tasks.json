@@ -96,9 +96,11 @@
       "id": "mo8bg2crph8v",
       "name": "映画　サンクチュアリ",
       "priority": "🟢 中",
-      "tags": [],
+      "tags": [
+        "全社"
+      ],
       "due": null,
-      "status": "未着手",
+      "status": "進行中",
       "memo": null,
       "itemType": "wish",
       "isProject": false,
