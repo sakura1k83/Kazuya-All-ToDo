@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "moarkomjzml6",
+      "name": "長崎電機商会\n決算手続き",
+      "priority": "🔴 最優先",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-23T00:49:22.603Z",
+      "order": -19
+    },
+    {
       "id": "moa8wvwd2x0o",
       "name": "王子税務コンサル対応\nカードの連携作業　仕入用",
       "priority": "🔴 最優先",
@@ -11,7 +26,8 @@
       "status": "未着手",
       "memo": "https://docs.google.com/spreadsheets/d/1fMXGcQozfZGO7qz8_MWmYd6MADmMTlVt4xi3FHWZsYQ/edit?usp=sharing",
       "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -18
+      "order": -18,
+      "itemType": "task"
     },
     {
       "id": "mo8bgjg04p2k",
