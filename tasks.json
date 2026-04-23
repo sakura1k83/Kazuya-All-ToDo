@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "mob1rcl28e4g",
+      "name": "クレカ連携　PAYPAYカードのみ未連携",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": "2026-04-30",
+      "status": "進行中",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-23T00:00:00.000Z",
+      "order": -22
+    },
+    {
       "id": "moaykvs0gyex",
       "name": "伊藤測量　給与入力",
       "priority": "🟢 中",
