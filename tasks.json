@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "mockoaofr5cn",
+      "name": "西山商事　退職者　源泉徴収票発送",
+      "priority": "🟢 中",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-04-27",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-24T00:00:00.000Z",
+      "order": -24
+    },
+    {
       "id": "mocknczjicm5",
       "name": "市川商会　補助金下調べ",
       "priority": "🟡 高",
