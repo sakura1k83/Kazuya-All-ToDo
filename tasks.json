@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "mocknczjicm5",
+      "name": "市川商会　補助金下調べ",
+      "priority": "🟡 高",
+      "tags": [
+        "コンサル・IT支援"
+      ],
+      "due": "2026-04-27",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-24T00:00:00.000Z",
+      "order": -23
+    },
+    {
       "id": "mob1rcl28e4g",
       "name": "クレカ連携　PAYPAYカードのみ未連携",
       "priority": "🟡 高",
