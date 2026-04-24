@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "mod3uuvca71n",
+      "name": "次年度予算策定",
+      "priority": "🟡 高",
+      "tags": [
+        "ライオンズ関連"
+      ],
+      "due": "2026-05-06",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-25T00:00:00.000Z",
+      "order": -26
+    },
+    {
       "id": "mod2tm1j4tw9",
       "name": "セルスタ報酬管理GAS案件（月次報酬確定の確認）を再開\n5月月初に実施\nメモのコンテキストを貼り付け実施サポートを受けること",
       "priority": "🟢 中",
