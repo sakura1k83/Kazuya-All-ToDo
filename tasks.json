@@ -1,6 +1,21 @@
 {
   "tasks": [
     {
+      "id": "moe06ak707tm",
+      "name": "伊藤測量設計　経営力向上計画",
+      "priority": "🟡 高",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-04-30",
+      "status": "進行中",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "createdAt": "2026-04-25T00:00:00.000Z",
+      "order": -28
+    },
+    {
       "id": "moe05r3ynzph",
       "name": "伊藤測量設計　先端設備等導入計画①回目　GT-705",
       "priority": "🔴 最優先",
