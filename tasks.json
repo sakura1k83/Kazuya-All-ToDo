@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "18",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay OAuth認証フロー（アクセストークン取得）を実装する",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 17
-    },
-    {
       "id": "23",
       "name": "[eBay APIリサーチツール/GAS] Phase1：GASスプレッドシート「eBay リサーチハブ」を新規作成・シート構成（設定/SoldItems/集計/価格モニター/トレンド/ログ）をセットアップする",
       "status": "未着手",
