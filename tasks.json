@@ -60,19 +60,6 @@
       "order": 26
     },
     {
-      "id": "21",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：本番環境（Production）に切り替えて最終動作確認する",
-      "status": "未着手",
-      "priority": "⬜ 低",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 28
-    },
-    {
       "id": "22",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：eBay Sandbox環境で全機能を動作確認・デバッグする",
       "status": "未着手",
