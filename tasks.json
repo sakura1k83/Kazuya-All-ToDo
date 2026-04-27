@@ -60,19 +60,6 @@
       "order": 26
     },
     {
-      "id": "22",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：eBay Sandbox環境で全機能を動作確認・デバッグする",
-      "status": "未着手",
-      "priority": "⬜ 低",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 29
-    },
-    {
       "id": "31",
       "name": "[eBay Shipping Policy API] 準備：eBay Developer Accountにログイン→アプリ作成→App ID / Cert ID / Refresh Token（sell.accountスコープ）を取得する",
       "status": "未着手",
