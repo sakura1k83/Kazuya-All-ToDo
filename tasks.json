@@ -68,12 +68,13 @@
         "会計事務所"
       ],
       "due": "2026-04-27",
-      "status": "未着手",
+      "status": "完了",
       "memo": null,
       "itemType": "task",
       "isProject": false,
       "createdAt": "2026-04-24T00:00:00.000Z",
-      "order": -24
+      "order": -24,
+      "completedAt": "2026-04-27T04:47:59.323Z"
     },
     {
       "id": "mocknczjicm5",
