@@ -1053,6 +1053,18 @@ body {
   background: rgba(255,255,255,0.76);
 }
 .task-card { cursor: pointer; }
+/* カテゴリ別背景色 */
+.task-card[data-cat="eBay事業"]        { background: #eff6ff; }
+.task-card[data-cat="コンサル・IT支援"] { background: #ecfdf5; }
+.task-card[data-cat="会計事務所"]       { background: #f5f3ff; }
+.task-card[data-cat="ライオンズ関連"]   { background: #fffbeb; }
+.task-card[data-cat="全社"]            { background: #f9fafb; }
+.task-card.done[data-cat]              { background: rgba(255,255,255,0.76); }
+[data-theme="dark"] .task-card[data-cat="eBay事業"]        { background: #1e3a5f; }
+[data-theme="dark"] .task-card[data-cat="コンサル・IT支援"] { background: #052e16; }
+[data-theme="dark"] .task-card[data-cat="会計事務所"]       { background: #2e1065; }
+[data-theme="dark"] .task-card[data-cat="ライオンズ関連"]   { background: #451a03; }
+[data-theme="dark"] .task-card[data-cat="全社"]            { background: #1e293b; }
 
 .task-check-wrap {
   width: 36px;
@@ -1237,7 +1249,7 @@ body {
   flex-direction: column;
   gap: 4px;
   padding-left: 6px;
-  opacity: 0.92;
+  opacity: 0;
   transition: opacity 0.16s;
 }
 .task-card:hover .task-actions { opacity: 1; }
@@ -2609,7 +2621,7 @@ function taskHtml(t) {
 
   return `
     ${manualMode && dragOverId === t.id ? '<div class="drop-zone"></div>' : ''}
-    <div class="task-card ${pClass} ${t.status==='完了'?'done':''}" id="card-${t.id}" style="cursor:pointer" onclick="openEditModal('${t.id}')" ${manualMode ? `draggable="true" ondragstart="event.stopPropagation();handleDragStart(event,'${t.id}')" ondragover="event.stopPropagation();handleDragOver(event,'${t.id}')" ondrop="event.stopPropagation();handleDrop(event,'${t.id}')" ondragend="handleDragEnd()"` : ''}>
+    <div class="task-card ${pClass} ${t.status==='完了'?'done':''}" id="card-${t.id}" data-cat="${escHtml((t.tags||[])[0]||'')}" onclick="openEditModal('${t.id}')" ${manualMode ? `draggable="true" ondragstart="event.stopPropagation();handleDragStart(event,'${t.id}')" ondragover="event.stopPropagation();handleDragOver(event,'${t.id}')" ondrop="event.stopPropagation();handleDrop(event,'${t.id}')" ondragend="handleDragEnd()"` : ''}>
       <div class="task-check-wrap">
         <div class="task-check ${t.status==='完了'?'checked':''}" onclick="event.stopPropagation();toggleDone('${t.id}')"></div>
       </div>
@@ -2625,7 +2637,8 @@ function taskHtml(t) {
         ${subtaskHtml}
       </div>
       <div class="task-actions">
-        <button class="btn btn-subtle btn-icon btn-danger" onclick="event.stopPropagation();deleteTask('${t.id}')">削除</button>
+        <button class="btn btn-subtle btn-icon" onclick="event.stopPropagation();openEditModal('${t.id}')" title="編集">✏️</button>
+        <button class="btn btn-subtle btn-icon btn-danger" onclick="event.stopPropagation();deleteTask('${t.id}')" title="削除">🗑</button>
       </div>
     </div>`;
 }

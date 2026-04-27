@@ -1,437 +1,26 @@
 {
   "tasks": [
     {
-      "id": "moe06ak707tm",
-      "name": "伊藤測量設計　経営力向上計画",
-      "priority": "🟡 高",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-30",
-      "status": "進行中",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-25T00:00:00.000Z",
-      "order": -28
-    },
-    {
-      "id": "moe05r3ynzph",
-      "name": "伊藤測量設計　先端設備等導入計画①回目　GT-705",
-      "priority": "🔴 最優先",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-25",
-      "status": "完了",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-25T00:00:00.000Z",
-      "order": -27,
-      "completedAt": "2026-04-27T04:48:39.876Z"
-    },
-    {
-      "id": "mod3uuvca71n",
-      "name": "次年度予算策定",
-      "priority": "🟡 高",
-      "tags": [
-        "ライオンズ関連"
-      ],
-      "due": "2026-05-06",
+      "id": "1",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
       "status": "未着手",
-      "memo": "運営費に追加事項\n①事務所の改修費　20万円程度\n②諮問委員会費用　7万円くらい計上すること",
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-25T00:00:00.000Z",
-      "order": -26
-    },
-    {
-      "id": "mod2tm1j4tw9",
-      "name": "セルスタ報酬管理GAS案件（月次報酬確定の確認）を再開\n5月月初に実施\nメモのコンテキストを貼り付け実施サポートを受けること",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-01",
-      "status": "未着手",
-      "memo": "【確定版コンテキスト：セルスタ報酬管理GAS】\n\n■ 全体構成\n1. セルスタ出品シート\n　→ 実績入力・月別集計の元データ\n\n2. Admin_リサーチ外注報酬input\n　→ 管理者専用の報酬計算・確定管理ファイル\n\n3. Template_リサーチ外注報酬output\n　→ リサーチャー別閲覧ファイルのコピー元テンプレ\n\n4. 報酬閲覧用_〇〇\n　→ 各リサーチャー本人に共有する閲覧用ファイル\n\n■ 命名ルール\nフォルダ名・ファイル名・Tableマスタ上の名前は完全一致。\n例：\nTableマスタ：tana\nフォルダ名：tana\nファイル名：報酬閲覧用_tana\n\n■ outputファイルの構成\n外注者用outputには以下3シートだけ残す。\n・閲覧用\n・確定履歴\n・使い方\n\n設定情報は「閲覧用」右側のAA:AB列に置き、非表示・保護する。\n\n■ Admin_リサーチ外注報酬input 側GAS\nメニュー名：\n報酬管理ツール\n\nメニュー構成：\n・新しい報酬月シートを作成・更新状況チェック（月末/月初）\n・新規リサーチャーoutput作成\n・月次報酬を確定（前月分・月初）\n・使い方シートを作成・更新\n\n■ 実装済み状態\n新規リサーチャーoutput作成は成功済み。\n既存outputの対象月文字列化・閲覧式再セット・書式コピーも修正済み。\n対象月が日付シリアル値になる問題は、setTextValue_で文字列固定する方針に修正済み。\n閲覧用はIMPORTRANGEで値を取得し、Admin input側の対象者ブロックに近い書式をGASでコピーする方式。\n\n■ output閲覧用の考え方\n月中：\nIMPORTRANGEで未確定速報を表示。\n月次確定までは件数・金額が変動する。\n\n月初確定後：\n確定履歴に値貼りで保存。\n閲覧用は次月へ切り替える。\n\n■ 月次報酬確定の注意\n「月次報酬を確定（前月分・月初）」はまだ本番テスト未実施。\n実行すると以下が走る。\n・対象月の報酬を各outputの確定履歴へ値貼り\n・Admin側の報酬確定履歴_Adminにログ追加\n・対象月シート保護\n・各outputの閲覧月を次月へ切替\n\n実行前に、次月シートがAdmin input側に存在する必要がある。\n例：\n2026年4月を確定するなら、2026年5月シートが必要。\n\n■ 次回やること\n月初に以下を実施予定。\n1. Admin_リサーチ外注報酬input 側で次月シートを作成\n2. 対象月の報酬計算を確認\n3. 月次報酬を確定（前月分・月初）を実行\n4. 各outputの確定履歴に値貼りされるか確認\n5. 閲覧用が次月に切り替わるか確認\n6. 対象月シートが保護されるか確認\n\n■ 参照しないもの\n・途中の古いGAS案\n・修正前のCode.gs\n・権限エラー対応のやり取り\n・日付シリアル値になる前の古い式\n・output側GASを使う案\n・管理シートを作る案",
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-25T00:00:00.000Z",
-      "order": -25
-    },
-    {
-      "id": "mockoaofr5cn",
-      "name": "西山商事　退職者　源泉徴収票発送",
-      "priority": "🟢 中",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-27",
-      "status": "完了",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-24T00:00:00.000Z",
-      "order": -24,
-      "completedAt": "2026-04-27T04:47:59.323Z"
-    },
-    {
-      "id": "mocknczjicm5",
-      "name": "市川商会　補助金下調べ",
-      "priority": "🟡 高",
-      "tags": [
-        "コンサル・IT支援"
-      ],
-      "due": "2026-04-27",
-      "status": "未着手",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-24T00:00:00.000Z",
-      "order": -23
-    },
-    {
-      "id": "mob1rcl28e4g",
-      "name": "クレカ連携　PAYPAYカードのみ未連携",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-04-30",
-      "status": "進行中",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -22
-    },
-    {
-      "id": "moaykvs0gyex",
-      "name": "伊藤測量　給与入力",
-      "priority": "🟢 中",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-23",
-      "status": "完了",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -21,
-      "completedAt": "2026-04-23T04:15:48.281Z"
-    },
-    {
-      "id": "moatti21zcpo",
-      "name": "日本郵便系のShippingPolicyを既存にマージする",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "status": "未着手",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -20
-    },
-    {
-      "id": "moarkomjzml6",
-      "name": "長崎電機商会\n決算手続き",
-      "priority": "🔴 最優先",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-23",
-      "status": "完了",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -19,
-      "completedAt": "2026-04-27T04:48:02.581Z"
-    },
-    {
-      "id": "moa8wvwd2x0o",
-      "name": "王子税務コンサル対応\nカードの連携作業　仕入用",
       "priority": "🔴 最優先",
       "tags": [
         "eBay事業"
       ],
-      "due": "2026-04-24",
-      "status": "完了",
-      "memo": "https://docs.google.com/spreadsheets/d/1fMXGcQozfZGO7qz8_MWmYd6MADmMTlVt4xi3FHWZsYQ/edit?usp=sharing",
-      "createdAt": "2026-04-23T00:00:00.000Z",
-      "order": -18,
-      "itemType": "task",
-      "isProject": false,
-      "completedAt": "2026-04-23T05:52:55.456Z"
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
     },
     {
-      "id": "mo8bgjg04p2k",
-      "name": "映画　不適切にもほどがある",
-      "priority": "🟢 中",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
-      "status": "進行中",
-      "memo": null,
-      "itemType": "wish",
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -17
-    },
-    {
-      "id": "mo8bg2crph8v",
-      "name": "映画　サンクチュアリ",
-      "priority": "🟢 中",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
-      "status": "進行中",
-      "memo": null,
-      "itemType": "wish",
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -16
-    },
-    {
-      "id": "mo8azfxvk5v1",
-      "name": "バイク",
-      "priority": "🟢 中",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
+      "id": "2",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：eBay Developer Account の Client ID / Client Secret を取得・確認する",
       "status": "未着手",
-      "memo": "バンデージ、トリプルツリー、1インチハンドル、タンク（ミドルマウント）、リアフラットフェンダー、ソロシート、ピレットサスペンション、バラクラバ、ペダルの皮、道具入れ",
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -15,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8au7t3a0wa",
-      "name": "ShippingPolicy　2500＄以上",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": null,
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -14,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8at2dfk8qh",
-      "name": "紘斗のゲーム関連",
-      "priority": "🟢 中",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": "フォートナイト",
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -13,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8asqhhcv4y",
-      "name": "紘斗のゲーム関連",
-      "priority": "🟢 中",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": "ロブロックス",
-      "isProject": false,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -12,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8aj5kxhni9",
-      "name": "eBayリサーチツール開発",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": null,
-      "isProject": true,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -11,
-      "itemType": "project"
-    },
-    {
-      "id": "mo8ah1wyjw3u",
-      "name": "eBayバイヤーメッセージツール/HTMLアプリ",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
-      "isProject": true,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -10,
-      "itemType": "project"
-    },
-    {
-      "id": "mo8a1iovpm7c",
-      "name": "ahamoへ切り替え実施",
-      "priority": "🟡 高",
-      "tags": [
-        "全社"
-      ],
-      "due": null,
-      "status": "進行中",
-      "memo": null,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -9,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8a15a5oyrm",
-      "name": "シミズ技興清水祐太さん\n\nR6年住民税",
       "priority": "🔴 最優先",
       "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-30",
-      "status": "進行中",
-      "memo": "更正の請求に関して、更正がまだされないが、どうなっているか？\n市役所と税務署へ確認ししてみる！",
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -8,
-      "itemType": "task"
-    },
-    {
-      "id": "mo8a0d23canc",
-      "name": "R7年分　課税仕入れ判断資料DL",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "status": "進行中",
-      "memo": "メルカリ\nAmazon\nジョーシン\nモノタロウ\nサウンドハウス\n金津屋商店\nタナカ金物\nディノス\nトラノテ\nヨドバシカメラ\nラクスル\nたのめーる\n医道の日本社",
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -7,
-      "itemType": "task",
-      "isProject": false
-    },
-    {
-      "id": "mo89zfd0vv6o",
-      "name": "dカードゴールド➡dカードへ変更",
-      "priority": "🟡 高",
-      "tags": [
-        "全社"
-      ],
-      "due": "2026-04-30",
-      "status": "未着手",
-      "memo": null,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -6,
-      "itemType": "task"
-    },
-    {
-      "id": "mo89yysaba29",
-      "name": "MyDoCoMoプラン変更検討",
-      "priority": "🟡 高",
-      "tags": [
-        "全社"
-      ],
-      "due": "2026-04-30",
-      "status": "進行中",
-      "memo": null,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -5,
-      "itemType": "task"
-    },
-    {
-      "id": "mo89y5ek72ti",
-      "name": "市川商会\n省力化補助金\n８％　着手10万円（済）",
-      "priority": "🟢 中",
-      "tags": [
-        "コンサル・IT支援",
-        "会計事務所"
-      ],
-      "due": "2026-05-31",
-      "status": "完了",
-      "memo": null,
-      "createdAt": "2026-04-21T00:00:00.000Z",
-      "order": -4,
-      "completedAt": "2026-04-21T07:00:25.436Z",
-      "itemType": "task"
-    },
-    {
-      "id": "mo89vuit4dvg",
-      "name": "虎虎　資料作成",
-      "priority": "🟡 高",
-      "tags": [
-        "コンサル・IT支援"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": null,
-      "createdAt": "2026-04-21T06:58:38.021Z",
-      "order": -3,
-      "itemType": "task"
-    },
-    {
-      "id": "mo7c1eyfurcn",
-      "name": "eBay API × GAS リサーチツール 実装計画           │\n     │                                                  │\n     │ Context                                          │\n     │                                                  │\n     │ かずや（一人代表・無在庫eBay販売95%）のリサーチ  │\n     │ 業務を自動化。                                   │\n     │ 現状：手動でeBay検索→価格調査、仕入れ判断に時間  │\n     │ がかかっている。                                 │\n     │ eBay App ID取得済み。GASファイルは未作成（Google │\n     │ ドライブ側）。                                   │\n     │ 対象マーケット：UK（主力）・AU・US。             │\n     │                                                  │\n     │ 目的：仕入れ判断・価格調整・トレンド把握を半自動 │\n     │ 化し、一人オペの負荷を削減。                     │\n     │                                                  │\n     │ ---                                              │\n     │ 実装方針                                         │\n     │                                                  │\n     │ - Finding API（App                               │\n     │ IDのみ・OAuth不要）を軸に段階実装                │\n     │ - GASは**新規スプレッドシート「eBay              │\n     │ リサーチハブ」**にバインド（コンテナバインド型） │\n     │ - GASコードは                                    │\n     │ 01_eBay事業/ツール・スクリプト/GAS/              │\n     │ にバックアップ保存                               │\n     │ - マーケット切り替えは X-EBAY-SOA-GLOBAL-ID      │\n     │ ヘッダーで対応（EBAY-GB/AU/US）                  │\n     │                                                  │\n     │ ---                                              │\n     │ 優先度順フェーズ                                 │\n     │                                                  │\n     │ Phase 1【最優先】Sold Items 価格リサーチツール   │\n     │                                                  │\n     │ 理由：仕入れ判断の根拠データ。最も業務インパクト │\n     │ が大きい。App IDのみで動く。                     │\n     │                                                  │\n     │ 使用API：Finding API - findCompletedItems        │\n     │ エンドポイント：https://svcs.ebay.com/services/s │\n     │ earch/FindingService/v1                          │\n     │                                                  │\n     │ 機能：                                           │\n     │ - キーワードで売り切れ商品を検索（最大100件/回） │\n     │ - 取得データ：タイトル・売値・通貨・販売日・カテ │\n     │ ゴリ・コンディション・URL                        │\n     │ - スプレッドシートに記録：平均価格・最安値・最高 │\n     │ 値・販売件数を自動集計                           │\n     │ - マーケット切り替え可能（UK/AU/US）             │\n     │                                                  │\n     │ スプレッドシートシート構成：                     │\n     │ - 設定 シート：App                               │\n     │ ID、デフォルトマーケット、検索キーワードリスト   │\n     │ - Sold Items シート：検索結果の蓄積（日付・キー  │\n     │ ワード・取得データ）                             │\n     │ - 集計 シート：キーワード別の価格サマリー        │\n     │                                                  │\n     │ ---                                              │\n     │ Phase 2【高優先】現在出品中 最安値モニター       │\n     │                                                  │\n     │ 理由：無在庫販売では競合最安値の把握が価格競争力 │\n     │ に直結。定期自動取得が必要。                     │\n     │                                                  │\n     │ 使用API：Finding API - findItemsAdvanced         │\n     │ 機能：                                           │\n     │ - 監視キーワードリスト（設定シートから読み込み） │\n     │ に対し最安値を取得                               │\n     │ - 毎日/毎時トリガーで自動実行（GAS時間トリガー） │\n     │ - 価格モニター                                   │\n     │ シートに記録。前回比較で下落アラートをメール送信 │\n     │ -                                                │\n     │ 自分の出品商品リストとの照合（キーワードマッチ） │\n     │                                                  │\n     │ 追加シート：                                     │\n     │ - 価格モニター                                   │\n     │ シート：監視対象・最安値履歴・変動フラグ         │\n     │                                                  │\n     │ ---                                              │\n     │ Phase 3【中優先】カテゴリ別トレンドリサーチ      │\n     │                                                  │\n     │ 理由：仕入れカテゴリ開拓・季節性把握のため。週次 │\n     │ バッチでOK。                                     │\n     │                                                  │\n     │ 使用API：Finding API - findItemsByCategory（売れ │\n     │ 筋商品を売上数でソート）                         │\n     │ 機能：                                           │\n     │ - 指定カテゴリIDの売れ筋商品を週次収集           │\n     │ - 売り切れ率・価格帯・コンディション分布を集計   │\n     │ - トレンド シートに蓄積                          │\n     │                                                  │\n     │ ---                                              │\n     │ Phase 4【将来】競合セラー分析                    │\n     │                                                  │\n     │ 理由：Trading API（OAuth                         │\n     │ 2.0必須）のため複雑。他フェーズ完成後に実装。    │\n     │                                                  │\n     │ 使用API：Trading API - GetSellerList             │\n     │ 前提：OAuthトークン取得・GASでの認証フロー実装が │\n     │ 必要                                             │\n     │                                                  │\n     │ ---                                              │\n     │ ファイル構成                                     │\n     │                                                  │\n     │ 01_eBay事業/ツール・スクリプト/GAS/              │\n     │ ├── 00_設定.md              # App                │\n     │ ID記載場所・スプレッドシートURL                  │\n     │ ├── Phase1_SoldItems.gs     # Sold Itemsリサーチ │\n     │ ├── Phase2_PriceMonitor.gs  # 最安値モニター     │\n     │ ├── Phase3_Trends.gs        # トレンドリサーチ   │\n     │ └── CommonUtils.gs          #                    │\n     │ 共通関数（API呼び出し・シート書き込み）          │\n     │                                                  │\n     │ Googleドライブ側：                               │\n     │ - スプレッドシート名：eBay                       │\n     │ リサーチハブ（新規作成）                         │\n     │ - GASスクリプト：上記.gsをコンテナバインドで設定 │\n     │                                                  │\n     │ ---                                              │\n     │ 実装詳細（Phase 1）                              │\n     │                                                  │\n     │ GASコア関数                                      │\n     │                                                  │\n     │ // CommonUtils.gs                                │\n     │ function callFindingAPI(operation, params,       │\n     │ marketplace) {                                   │\n     │   const APP_ID = getAppId(); //                  │\n     │ 設定シートから読み込み                           │\n     │   const endpoint = 'https://svcs.ebay.com/servic │\n     │ es/search/FindingService/v1';                    │\n     │   const options = {                              │\n     │     method: 'GET',                               │\n     │     headers: {                                   │\n     │       'X-EBAY-SOA-GLOBAL-ID': marketplace, //    │\n     │ 'EBAY-GB', 'EBAY-AU', 'EBAY-US'                  │\n     │       'X-EBAY-SOA-OPERATION-NAME': operation,    │\n     │       'X-EBAY-SOA-SERVICE-VERSION': '1.0.0',     │\n     │       'X-EBAY-SOA-RESPONSE-DATA-FORMAT': 'JSON', │\n     │       'X-EBAY-SOA-SECURITY-APPNAME': APP_ID      │\n     │     },                                           │\n     │     muteHttpExceptions: true                     │\n     │   };                                             │\n     │   const url = endpoint + '?' +                   │\n     │ buildQueryString(params);                        │\n     │   const response = UrlFetchApp.fetch(url,        │\n     │ options);                                        │\n     │   return JSON.parse(response.getContentText());  │\n     │ }                                                │\n     │                                                  │\n     │ Phase 1 メイン関数                               │\n     │                                                  │\n     │ // Phase1_SoldItems.gs                           │\n     │ function searchSoldItems() {                     │\n     │   const ss =                                     │\n     │ SpreadsheetApp.getActiveSpreadsheet();           │\n     │   const config = ss.getSheetByName('設定');      │\n     │   const keywords =                               │\n     │ getKeywordsFromConfig(config);                   │\n     │   const marketplace =                            │\n     │ config.getRange('B3').getValue(); // 'EBAY-GB'等 │\n     │                                                  │\n     │   keywords.forEach(keyword => {                  │\n     │     const params = {                             │\n     │       keywords: keyword,                         │\n     │       'itemFilter(0).name': 'SoldItemsOnly',     │\n     │       'itemFilter(0).value': 'true',             │\n     │       sortOrder: 'EndTimeSoonest',               │\n     │       'paginationInput.entriesPerPage': 100      │\n     │     };                                           │\n     │     const result =                               │\n     │ callFindingAPI('findCompletedItems', params,     │\n     │ marketplace);                                    │\n     │     writeResultsToSheet(result, keyword, ss);    │\n     │   });                                            │\n     │ }                                                │\n     │                                                  │\n     │ ---                                              │\n     │ 検証方法                                         │\n     │                                                  │\n     │ 1. Phase 1動作確認：                             │\n     │   - GASエディタでの手動実行 → Sold Items         │\n     │ シートにデータ書き込み確認                       │\n     │   - 3種マーケット（GB/AU/US）切り替えテスト      │\n     │   - キーワード：既知商品で売値が現実的か確認     │\n     │ 2. Phase 2動作確認：                             │\n     │   - 時間トリガー設定後、翌日に 価格モニター      │\n     │ シートの更新確認                                 │\n     │   - 価格下落時のメール通知テスト                 │\n     │ 3. エラーハンドリング：                          │\n     │   - API制限（1日5,000コール）の確認              │\n     │   - 実行ログ シートへのエラー記録                │\n     │                                                  │\n     │ ---                                              │\n     │ 注意事項                                         │\n     │                                                  │\n     │ - Finding API                                    │\n     │ の無料クォータ：1日5,000コール（App IDあたり）   │\n     │ - Sold Items の検索には SoldItemsOnly=true       │\n     │ フィルターが必要                                 │\n     │ - eBay AU の通貨はAUD、UKはGBP →                 │\n     │ 円換算は別途処理                                 │\n     │ - GASの実行時間上限：6分/回（大量データ時は分割  │\n     │ 処理）",
-      "priority": "🟢 中",
-      "tags": [
         "eBay事業"
       ],
       "due": null,
-      "status": "未着手",
-      "memo": null,
-      "createdAt": "2026-04-20T15:11:10.839Z",
-      "order": -2,
-      "itemType": "task"
-    },
-    {
-      "id": "mo7al7bmwlid",
-      "name": "長崎電機商会　業務効率化",
-      "priority": "🟢 中",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-04-28",
-      "status": "進行中",
-      "memo": null,
-      "createdAt": "2026-04-20T00:00:00.000Z",
-      "order": -1,
-      "itemType": "task"
-    },
-    {
-      "id": "mo70a3g1nvyp",
-      "name": "シミズ技興/スキャナ導入支援",
-      "priority": "🟢 中",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": null,
-      "status": "進行中",
-      "memo": "２０２６０１０９追記\n残業の処理の関係で問題発生\n一旦ペンディングとする",
-      "createdAt": "2025-11-01T00:00:00.000Z",
-      "order": 1,
-      "itemType": "task"
+      "createdAt": "2026-04-20T00:00:00Z"
     },
     {
       "id": "4",
@@ -443,9 +32,326 @@
       ],
       "due": "2026-04-15",
       "createdAt": "2026-04-20T00:00:00Z",
-      "completedAt": "2026-04-20T08:55:18.074Z",
-      "order": 4,
-      "itemType": "task"
+      "completedAt": "2026-04-20T08:55:18.074Z"
+    },
+    {
+      "id": "5",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：フロントエンドの画面レイアウト・画面遷移を設計する",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "6",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：Node.js ローカルサーバーの構成・APIエンドポイントを設計する",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：クレーム対応の既存テンプレ・対応フローを棚卸しする",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "8",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：Web検索API選定・準備（Perplexity / Google Custom Search 等）",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "9",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：テンプレート管理画面（追加・編集・削除）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "10",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：クレーム対応の定型文テンプレート選択・適用機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "11",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：返信エディタ（日本語入力・翻訳ボタン付き）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "12",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：未返信メッセージ一覧画面を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "13",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：Web検索APIと連携して返信案生成時に最新情報を取得する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "14",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：AI APIで商品情報＋Web検索結果を踏まえた返信案を生成するボタンを実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "15",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：AI APIで英語↔日本語の翻訳機能を実装する（返信文の変換）",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "16",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay APIでバイヤーへのメッセージ返信を送信する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "17",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay APIでバイヤーからのメッセージ一覧を取得する機能を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "18",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 実装：eBay OAuth認証フロー（アクセストークン取得）を実装する",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "23",
+      "name": "[eBay APIリサーチツール/GAS] Phase1：GASスプレッドシート「eBay リサーチハブ」を新規作成・シート構成（設定/SoldItems/集計/価格モニター/トレンド/ログ）をセットアップする",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "24",
+      "name": "[eBay APIリサーチツール/GAS] Phase1：CommonUtils.gs を実装する（Finding API呼び出し共通関数・マーケット切り替え EBAY-GB/AU/US）",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "25",
+      "name": "[eBay APIリサーチツール/GAS] Phase1：Phase1_SoldItems.gs を実装する（findCompletedItems・平均/最安/最高値・件数を集計シートに書き込み）",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "26",
+      "name": "[eBay APIリサーチツール/GAS] Phase1：動作確認・テスト（UK/AU/US 3マーケット切り替え・価格データ正常取得を確認）",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "27",
+      "name": "[eBay APIリサーチツール/GAS] Phase2：Phase2_PriceMonitor.gs を実装する（findItemsAdvanced・監視キーワードの最安値を毎日取得・前回比較）",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "28",
+      "name": "[eBay APIリサーチツール/GAS] Phase2：GAS時間トリガー設定（毎日自動実行）と価格下落時のメール通知機能を実装する",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "29",
+      "name": "[eBay APIリサーチツール/GAS] Phase3：Phase3_Trends.gs を実装する（findItemsByCategory・カテゴリ別売れ筋商品を週次収集・トレンドシートに蓄積）",
+      "status": "未着手",
+      "priority": "🟢 中",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "30",
+      "name": "[eBay APIリサーチツール/GAS] Phase4：競合セラー分析ツール実装（Trading API OAuth認証フロー・GetSellerList）※Phase1-3完了後",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "19",
+      "name": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "20",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 整備：ローカル起動手順・設定方法のドキュメントを作成する",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "21",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：本番環境（Production）に切り替えて最終動作確認する",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "22",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：eBay Sandbox環境で全機能を動作確認・デバッグする",
+      "status": "未着手",
+      "priority": "⬜ 低",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00Z"
+    },
+    {
+      "id": "31",
+      "name": "[eBay Shipping Policy API] 準備：eBay Developer Accountにログイン→アプリ作成→App ID / Cert ID / Refresh Token（sell.accountスコープ）を取得する",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-25T00:00:00Z"
+    },
+    {
+      "id": "32",
+      "name": "[eBay Shipping Policy API] セットアップ：.envにAPIキーを設定し、exportコマンドで既存ポリシー（約50件）をconfig.yamlに取り込む",
+      "status": "未着手",
+      "priority": "🔴 最優先",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-25T00:00:00Z"
+    },
+    {
+      "id": "33",
+      "name": "[eBay Shipping Policy API] 実装：config.yaml・スクリプトを完全版に更新（DOMESTIC/INTERNATIONAL分離・発送除外国・対象国設定に対応）",
+      "status": "未着手",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-25T00:00:00Z"
     }
   ]
 }
