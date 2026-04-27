@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "30",
-      "name": "[eBay APIリサーチツール/GAS] Phase4：競合セラー分析ツール実装（Trading API OAuth認証フロー・GetSellerList）※Phase1-3完了後",
-      "status": "未着手",
-      "priority": "⬜ 低",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 25
-    },
-    {
       "id": "19",
       "name": "ZIK Analytics 導入検討・トライアル（月利20万円達成後）",
       "status": "未着手",
