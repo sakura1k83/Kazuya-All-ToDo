@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "23",
-      "name": "[eBay APIリサーチツール/GAS] Phase1：GASスプレッドシート「eBay リサーチハブ」を新規作成・シート構成（設定/SoldItems/集計/価格モニター/トレンド/ログ）をセットアップする",
-      "status": "未着手",
-      "priority": "🔴 最優先",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 18
-    },
-    {
       "id": "24",
       "name": "[eBay APIリサーチツール/GAS] Phase1：CommonUtils.gs を実装する（Finding API呼び出し共通関数・マーケット切り替え EBAY-GB/AU/US）",
       "status": "未着手",
