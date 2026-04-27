@@ -19,15 +19,18 @@
     {
       "id": "2",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：eBay Developer Account の Client ID / Client Secret を取得・確認する",
-      "status": "未着手",
-      "priority": "🔴 最優先",
+      "status": "進行中",
+      "priority": "🟡 高",
       "tags": [
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 2
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "itemType": "project",
+      "order": 2,
+      "memo": null,
+      "isProject": true,
+      "subtasks": []
     },
     {
       "id": "4",
