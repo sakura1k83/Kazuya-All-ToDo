@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "29",
-      "name": "[eBay APIリサーチツール/GAS] Phase3：Phase3_Trends.gs を実装する（findItemsByCategory・カテゴリ別売れ筋商品を週次収集・トレンドシートに蓄積）",
-      "status": "未着手",
-      "priority": "🟢 中",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 24
-    },
-    {
       "id": "30",
       "name": "[eBay APIリサーチツール/GAS] Phase4：競合セラー分析ツール実装（Trading API OAuth認証フロー・GetSellerList）※Phase1-3完了後",
       "status": "未着手",
