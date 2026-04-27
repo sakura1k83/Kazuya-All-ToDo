@@ -47,32 +47,6 @@
       "order": 3
     },
     {
-      "id": "25",
-      "name": "[eBay APIリサーチツール/GAS] Phase1：Phase1_SoldItems.gs を実装する（findCompletedItems・平均/最安/最高値・件数を集計シートに書き込み）",
-      "status": "未着手",
-      "priority": "🔴 最優先",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 20
-    },
-    {
-      "id": "26",
-      "name": "[eBay APIリサーチツール/GAS] Phase1：動作確認・テスト（UK/AU/US 3マーケット切り替え・価格データ正常取得を確認）",
-      "status": "未着手",
-      "priority": "🔴 最優先",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 21
-    },
-    {
       "id": "27",
       "name": "[eBay APIリサーチツール/GAS] Phase2：Phase2_PriceMonitor.gs を実装する（findItemsAdvanced・監視キーワードの最安値を毎日取得・前回比較）",
       "status": "未着手",
