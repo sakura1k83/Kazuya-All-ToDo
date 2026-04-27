@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "24",
-      "name": "[eBay APIリサーチツール/GAS] Phase1：CommonUtils.gs を実装する（Finding API呼び出し共通関数・マーケット切り替え EBAY-GB/AU/US）",
-      "status": "未着手",
-      "priority": "🔴 最優先",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 19
-    },
-    {
       "id": "25",
       "name": "[eBay APIリサーチツール/GAS] Phase1：Phase1_SoldItems.gs を実装する（findCompletedItems・平均/最安/最高値・件数を集計シートに書き込み）",
       "status": "未着手",
