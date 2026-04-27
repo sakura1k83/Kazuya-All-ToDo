@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "7",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：クレーム対応の既存テンプレ・対応フローを棚卸しする",
-      "status": "未着手",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 6
-    },
-    {
       "id": "8",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：Web検索API選定・準備（Perplexity / Google Custom Search 等）",
       "status": "未着手",
