@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "5",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：フロントエンドの画面レイアウト・画面遷移を設計する",
-      "status": "未着手",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 4
-    },
-    {
       "id": "6",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 設計：Node.js ローカルサーバーの構成・APIエンドポイントを設計する",
       "status": "未着手",
