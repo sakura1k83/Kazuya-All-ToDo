@@ -3,13 +3,18 @@
     {
       "id": "1",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
-      "status": "未着手",
-      "priority": "🔴 最優先",
+      "status": "進行中",
+      "priority": "🟡 高",
       "tags": [
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "itemType": "project",
+      "order": 1,
+      "memo": null,
+      "isProject": true,
+      "subtasks": []
     },
     {
       "id": "2",
@@ -20,7 +25,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 2
     },
     {
       "id": "4",
@@ -32,7 +39,9 @@
       ],
       "due": "2026-04-15",
       "createdAt": "2026-04-20T00:00:00Z",
-      "completedAt": "2026-04-20T08:55:18.074Z"
+      "completedAt": "2026-04-20T08:55:18.074Z",
+      "itemType": "task",
+      "order": 3
     },
     {
       "id": "5",
@@ -43,7 +52,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 4
     },
     {
       "id": "6",
@@ -54,7 +65,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 5
     },
     {
       "id": "7",
@@ -65,7 +78,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 6
     },
     {
       "id": "8",
@@ -76,7 +91,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 7
     },
     {
       "id": "9",
@@ -87,7 +104,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 8
     },
     {
       "id": "10",
@@ -98,7 +117,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 9
     },
     {
       "id": "11",
@@ -109,7 +130,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 10
     },
     {
       "id": "12",
@@ -120,7 +143,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 11
     },
     {
       "id": "13",
@@ -131,7 +156,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 12
     },
     {
       "id": "14",
@@ -142,7 +169,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 13
     },
     {
       "id": "15",
@@ -153,7 +182,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 14
     },
     {
       "id": "16",
@@ -164,7 +195,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 15
     },
     {
       "id": "17",
@@ -175,7 +208,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 16
     },
     {
       "id": "18",
@@ -186,7 +221,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 17
     },
     {
       "id": "23",
@@ -197,7 +234,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 18
     },
     {
       "id": "24",
@@ -208,7 +247,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 19
     },
     {
       "id": "25",
@@ -219,7 +260,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 20
     },
     {
       "id": "26",
@@ -230,7 +273,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 21
     },
     {
       "id": "27",
@@ -241,7 +286,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 22
     },
     {
       "id": "28",
@@ -252,7 +299,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 23
     },
     {
       "id": "29",
@@ -263,7 +312,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 24
     },
     {
       "id": "30",
@@ -274,7 +325,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 25
     },
     {
       "id": "19",
@@ -285,7 +338,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 26
     },
     {
       "id": "20",
@@ -296,7 +351,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 27
     },
     {
       "id": "21",
@@ -307,7 +364,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 28
     },
     {
       "id": "22",
@@ -318,7 +377,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-20T00:00:00Z"
+      "createdAt": "2026-04-20T00:00:00Z",
+      "itemType": "task",
+      "order": 29
     },
     {
       "id": "31",
@@ -329,7 +390,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-25T00:00:00Z"
+      "createdAt": "2026-04-25T00:00:00Z",
+      "itemType": "task",
+      "order": 30
     },
     {
       "id": "32",
@@ -340,7 +403,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-25T00:00:00Z"
+      "createdAt": "2026-04-25T00:00:00Z",
+      "itemType": "task",
+      "order": 31
     },
     {
       "id": "33",
@@ -351,7 +416,9 @@
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-25T00:00:00Z"
+      "createdAt": "2026-04-25T00:00:00Z",
+      "itemType": "task",
+      "order": 32
     }
   ]
 }
