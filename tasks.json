@@ -60,19 +60,6 @@
       "order": 26
     },
     {
-      "id": "20",
-      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 整備：ローカル起動手順・設定方法のドキュメントを作成する",
-      "status": "未着手",
-      "priority": "⬜ 低",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 27
-    },
-    {
       "id": "21",
       "name": "[eBayバイヤーメッセージツール/HTMLアプリ] テスト：本番環境（Production）に切り替えて最終動作確認する",
       "status": "未着手",
