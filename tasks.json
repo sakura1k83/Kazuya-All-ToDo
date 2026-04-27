@@ -71,19 +71,6 @@
       "createdAt": "2026-04-25T00:00:00Z",
       "itemType": "task",
       "order": 30
-    },
-    {
-      "id": "33",
-      "name": "[eBay Shipping Policy API] 実装：config.yaml・スクリプトを完全版に更新（DOMESTIC/INTERNATIONAL分離・発送除外国・対象国設定に対応）",
-      "status": "未着手",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-25T00:00:00Z",
-      "itemType": "task",
-      "order": 32
     }
   ]
 }
