@@ -47,19 +47,6 @@
       "order": 3
     },
     {
-      "id": "27",
-      "name": "[eBay APIリサーチツール/GAS] Phase2：Phase2_PriceMonitor.gs を実装する（findItemsAdvanced・監視キーワードの最安値を毎日取得・前回比較）",
-      "status": "未着手",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": null,
-      "createdAt": "2026-04-20T00:00:00Z",
-      "itemType": "task",
-      "order": 22
-    },
-    {
       "id": "28",
       "name": "[eBay APIリサーチツール/GAS] Phase2：GAS時間トリガー設定（毎日自動実行）と価格下落時のメール通知機能を実装する",
       "status": "未着手",
