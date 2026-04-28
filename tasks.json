@@ -1,6 +1,23 @@
 {
   "tasks": [
     {
+      "id": "moi2bupagcbk",
+      "name": "市川商会　補助金案内",
+      "priority": "🟡 高",
+      "tags": [
+        "コンサル・IT支援"
+      ],
+      "due": "2026-04-28",
+      "status": "完了",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-28T00:00:00.000Z",
+      "order": -8,
+      "completedAt": "2026-04-28T03:24:49.582Z"
+    },
+    {
       "id": "moi268baosoc",
       "name": "JRSI　決算",
       "priority": "🟡 高",
