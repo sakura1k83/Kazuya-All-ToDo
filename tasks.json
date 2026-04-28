@@ -1,82 +1,46 @@
 {
   "tasks": [
     {
-      "id": "moi2bupagcbk",
-      "name": "市川商会　補助金案内",
-      "priority": "🟡 高",
-      "tags": [
-        "コンサル・IT支援"
-      ],
-      "due": "2026-04-28",
-      "status": "完了",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "subtasks": [],
-      "createdAt": "2026-04-28T00:00:00.000Z",
-      "order": -8,
-      "completedAt": "2026-04-28T03:24:49.582Z"
-    },
-    {
-      "id": "moi268baosoc",
-      "name": "JRSI　決算",
-      "priority": "🟡 高",
+      "id": "moi36xpm42aw",
+      "name": "間堀　大宮さん源泉徴収簿出力送付",
+      "priority": "🟢 中",
       "tags": [
         "会計事務所"
       ],
-      "due": "2026-05-08",
-      "status": "進行中",
-      "memo": null,
-      "itemType": "task",
-      "isProject": false,
-      "subtasks": [],
-      "createdAt": "2026-04-28T00:00:00.000Z",
-      "order": -7
-    },
-    {
-      "id": "moi23nt3ytco",
-      "name": "タナカ建工　決算",
-      "priority": "🟡 高",
-      "tags": [
-        "会計事務所"
-      ],
-      "due": "2026-05-08",
+      "due": null,
       "status": "未着手",
       "memo": null,
       "itemType": "task",
       "isProject": false,
-      "subtasks": [],
-      "createdAt": "2026-04-28T00:00:00.000Z",
+      "createdAt": "2026-04-28T03:48:59.818Z",
       "order": -6
     },
     {
-      "id": "moi231v36y60",
-      "name": "シッピングポリシー更新",
-      "priority": "🟡 高",
-      "tags": [
-        "eBay事業"
-      ],
-      "due": "2026-05-06",
-      "status": "進行中",
+      "id": "moi1v40pfufw",
+      "name": "sldkf",
+      "priority": "🟢 中",
+      "tags": [],
+      "due": null,
+      "status": "未着手",
       "memo": null,
-      "itemType": "task",
-      "isProject": false,
+      "itemType": "project",
+      "isProject": true,
       "subtasks": [],
       "createdAt": "2026-04-28T00:00:00.000Z",
       "order": -5
     },
     {
-      "id": "moi20fj24674",
-      "name": "伊藤測量　経営力　３資産",
-      "priority": "🟡 高",
+      "id": "moi1hcw1yaup",
+      "name": "skjfda",
+      "priority": "🟢 中",
       "tags": [
-        "会計事務所"
+        "コンサル・IT支援"
       ],
       "due": null,
-      "status": "進行中",
-      "memo": "ハンディスキャナーの証明書取得し次第",
-      "itemType": "task",
-      "isProject": false,
+      "status": "未着手",
+      "memo": null,
+      "itemType": "project",
+      "isProject": true,
       "subtasks": [],
       "createdAt": "2026-04-28T00:00:00.000Z",
       "order": -4
@@ -89,7 +53,7 @@
         "ライオンズ関連"
       ],
       "due": "2026-05-06",
-      "status": "進行中",
+      "status": "未着手",
       "memo": null,
       "itemType": "task",
       "isProject": false,
@@ -130,6 +94,38 @@
       "order": -1
     },
     {
+      "id": "1",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：AI API選定（OpenAI or Gemini）と APIキーを準備する",
+      "status": "進行中",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "itemType": "project",
+      "order": 1,
+      "memo": null,
+      "isProject": true,
+      "subtasks": []
+    },
+    {
+      "id": "2",
+      "name": "[eBayバイヤーメッセージツール/HTMLアプリ] 環境確認：eBay Developer Account の Client ID / Client Secret を取得・確認する",
+      "status": "進行中",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "createdAt": "2026-04-20T00:00:00.000Z",
+      "itemType": "project",
+      "order": 2,
+      "memo": null,
+      "isProject": true,
+      "subtasks": []
+    },
+    {
       "id": "4",
       "name": "虎虎ファクトリーコンサル内容提案資料",
       "status": "完了",
@@ -159,18 +155,15 @@
     {
       "id": "31",
       "name": "[eBay Shipping Policy API] 準備：eBay Developer Accountにログイン→アプリ作成→App ID / Cert ID / Refresh Token（sell.accountスコープ）を取得する",
-      "status": "進行中",
+      "status": "未着手",
       "priority": "🔴 最優先",
       "tags": [
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-25T00:00:00.000Z",
-      "itemType": "project",
-      "order": 30,
-      "memo": null,
-      "isProject": true,
-      "subtasks": []
+      "createdAt": "2026-04-25T00:00:00Z",
+      "itemType": "task",
+      "order": 30
     }
   ]
 }
