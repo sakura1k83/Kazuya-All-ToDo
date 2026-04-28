@@ -170,17 +170,15 @@ body {
 
 /* ── Header quote ── */
 .header-quote {
-  font-size: 11.5px;
+  font-size: 34px;
   color: #fbbf24;
   font-style: italic;
-  font-weight: 500;
-  margin-top: 3px;
-  line-height: 1.4;
-  max-width: 480px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  font-weight: 600;
+  margin-top: 4px;
+  line-height: 1.25;
+  max-width: 760px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  letter-spacing: -0.01em;
 }
 
 /* ── Subtasks ── */
@@ -1664,7 +1662,6 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
     <div class="header-inner">
       <div class="header-copy">
         <span class="header-title">TASK BOARD</span>
-        <span class="header-subtitle">次にやることが迷わない ToDo</span>
         <span class="header-quote" id="header-quote"></span>
       </div>
       <div class="header-actions">
@@ -2920,6 +2917,7 @@ async function saveTask() {
   }
   closeModal();
   activeCategory = '';
+  showArchive = false;
   document.querySelectorAll('.jump-btn').forEach(b => b.classList.remove('active'));
   updateSyncIndicator('dirty', '未同期あり');
   renderTasks(); updateCounts();
@@ -2975,6 +2973,7 @@ async function quickAddTask() {
   document.getElementById('quick-priority').value = '🟢 中';
   document.getElementById('quick-tag').value = '';
   activeCategory = '';
+  showArchive = false;
   document.querySelectorAll('.jump-btn').forEach(b => b.classList.remove('active'));
   updateSyncIndicator('dirty', '未同期あり');
   renderTasks(); updateCounts();
