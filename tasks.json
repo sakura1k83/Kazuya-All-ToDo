@@ -8,12 +8,13 @@
         "会計事務所"
       ],
       "due": null,
-      "status": "未着手",
+      "status": "完了",
       "memo": null,
       "itemType": "task",
       "isProject": false,
       "createdAt": "2026-04-28T03:48:59.818Z",
-      "order": -6
+      "order": -6,
+      "completedAt": "2026-04-28T03:49:03.447Z"
     },
     {
       "id": "moi1v40pfufw",
