@@ -94,15 +94,18 @@
     {
       "id": "31",
       "name": "[eBay Shipping Policy API] 準備：eBay Developer Accountにログイン→アプリ作成→App ID / Cert ID / Refresh Token（sell.accountスコープ）を取得する",
-      "status": "未着手",
+      "status": "進行中",
       "priority": "🔴 最優先",
       "tags": [
         "eBay事業"
       ],
       "due": null,
-      "createdAt": "2026-04-25T00:00:00Z",
-      "itemType": "task",
-      "order": 30
+      "createdAt": "2026-04-25T00:00:00.000Z",
+      "itemType": "project",
+      "order": 30,
+      "memo": null,
+      "isProject": true,
+      "subtasks": []
     }
   ]
 }
