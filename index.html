@@ -2501,6 +2501,7 @@ function projectCardHtml(t) {
       <div class="project-actions">
         <button class="btn btn-subtle btn-icon" onclick="setTaskStatus('${t.id}','進行中')">進行中</button>
         <button class="btn btn-subtle btn-icon" onclick="openEditModal('${t.id}')">編集</button>
+        <button class="btn btn-subtle btn-icon btn-danger" onclick="deleteTask('${t.id}')">🗑</button>
       </div>
     </div>`;
 }
