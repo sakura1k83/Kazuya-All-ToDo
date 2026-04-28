@@ -170,15 +170,17 @@ body {
 
 /* ── Header quote ── */
 .header-quote {
-  font-size: 11px;
-  color: rgba(193,205,230,0.85);
+  font-size: 11.5px;
+  color: #fbbf24;
   font-style: italic;
-  margin-top: 2px;
+  font-weight: 500;
+  margin-top: 3px;
   line-height: 1.4;
-  max-width: 400px;
+  max-width: 480px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
 /* ── Subtasks ── */
@@ -2026,6 +2028,7 @@ function init() {
   ghToken = localStorage.getItem(TOKEN_KEY) || '';
   loadCachedQuote();
   ensureDailyQuote();
+  setInterval(ensureDailyQuote, QUOTE_TTL_MS);
   updateSyncIndicator('synced', '同期前');
   if (!ghToken) {
     document.getElementById('setup-view').classList.add('active');
@@ -2072,21 +2075,29 @@ function ghHeaders() {
 }
 function b64encode(s) { return btoa(unescape(encodeURIComponent(s))); }
 function b64decode(s) { return decodeURIComponent(escape(atob(s.replace(/\n/g, '')))); }
+
+function fetchWithTimeout(url, options = {}, ms = 15000) {
+  const ctrl = new AbortController();
+  const tid  = setTimeout(() => ctrl.abort(), ms);
+  return fetch(url, { ...options, signal: ctrl.signal }).finally(() => clearTimeout(tid));
+}
 function getItemType(task) {
   if (task.itemType) return task.itemType;
   if (task.isProject) return 'project';
   return 'task';
 }
+const QUOTE_TTL_MS = 3 * 60 * 60 * 1000;
+
 function loadCachedQuote() {
   try {
     const cached = JSON.parse(localStorage.getItem(QUOTE_CACHE_KEY) || 'null');
-    if (cached && cached.timestamp && (Date.now() - cached.timestamp) < 12 * 60 * 60 * 1000) {
+    if (cached && cached.timestamp && (Date.now() - cached.timestamp) < QUOTE_TTL_MS) {
       dailyQuote = cached;
     }
   } catch {}
 }
 async function ensureDailyQuote() {
-  if (dailyQuote && dailyQuote.timestamp && (Date.now() - dailyQuote.timestamp) < 12 * 60 * 60 * 1000) return;
+  if (dailyQuote && dailyQuote.timestamp && (Date.now() - dailyQuote.timestamp) < QUOTE_TTL_MS) return;
   try {
     const res = await fetch('https://quotes.rest/qod.json?category=inspire');
     if (!res.ok) throw new Error(`quote fetch failed: ${res.status}`);
@@ -2124,7 +2135,7 @@ function renderQuote() {
 }
 
 async function ghGet() {
-  const res = await fetch(API_URL, { headers: ghHeaders() });
+  const res = await fetchWithTimeout(API_URL, { headers: ghHeaders() });
   if (res.status === 401) { resetToken(); throw new Error('認証エラー'); }
   if (!res.ok) throw new Error(`取得エラー: ${res.status}`);
   const data = await res.json();
@@ -2134,11 +2145,11 @@ async function ghGet() {
 
 async function ghPut(json) {
   if (!fileSha) {
-    const r = await fetch(API_URL, { headers: ghHeaders() });
+    const r = await fetchWithTimeout(API_URL, { headers: ghHeaders() });
     if (r.ok) { fileSha = (await r.json()).sha; }
   }
   for (let attempt = 0; attempt < 2; attempt += 1) {
-    const res = await fetch(API_URL, {
+    const res = await fetchWithTimeout(API_URL, {
       method: 'PUT',
       headers: ghHeaders(),
       body: JSON.stringify({
@@ -2152,7 +2163,7 @@ async function ghPut(json) {
       return;
     }
     if ((res.status === 409 || res.status === 422) && attempt === 0) {
-      const latest = await fetch(API_URL, { headers: ghHeaders() });
+      const latest = await fetchWithTimeout(API_URL, { headers: ghHeaders() });
       if (!latest.ok) throw new Error(`保存エラー: ${res.status}`);
       fileSha = (await latest.json()).sha;
       continue;
@@ -2193,8 +2204,13 @@ async function loadTasks() {
   }
 }
 
+let _isSaving = false;
+let _pendingSave = false;
+
 async function saveTasks() {
   localStorage.setItem(CACHE_KEY, JSON.stringify(tasks));
+  if (_isSaving) { _pendingSave = true; return; }
+  _isSaving = true;
   updateSyncIndicator('saving', '保存中');
   try {
     await ghPut({ tasks });
@@ -2203,6 +2219,12 @@ async function saveTasks() {
   } catch (e) {
     showToast('クラウド保存失敗 · ローカルには保存済み');
     updateSyncIndicator('offline', '未同期あり');
+  } finally {
+    _isSaving = false;
+    if (_pendingSave) {
+      _pendingSave = false;
+      saveTasks();
+    }
   }
 }
 
@@ -2897,6 +2919,8 @@ async function saveTask() {
     });
   }
   closeModal();
+  activeCategory = '';
+  document.querySelectorAll('.jump-btn').forEach(b => b.classList.remove('active'));
   updateSyncIndicator('dirty', '未同期あり');
   renderTasks(); updateCounts();
   await saveTasks();
@@ -2950,6 +2974,8 @@ async function quickAddTask() {
   document.getElementById('quick-kind').value = 'task';
   document.getElementById('quick-priority').value = '🟢 中';
   document.getElementById('quick-tag').value = '';
+  activeCategory = '';
+  document.querySelectorAll('.jump-btn').forEach(b => b.classList.remove('active'));
   updateSyncIndicator('dirty', '未同期あり');
   renderTasks(); updateCounts();
   showToast(itemType === 'project' ? 'プロジェクトを追加しました' : itemType === 'wish' ? 'やりたいことを追加しました' : 'クイック追加しました');
