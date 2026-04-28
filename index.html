@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Task — かずや</title>
+<title>KMA-All-Tasks</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#111827">
@@ -378,62 +378,58 @@ body {
   line-height: 1.5;
   color: var(--text);
 }
+.guide-actions-wrap {
+  position: relative;
+}
+.guide-header-btn {
+  font-size: 23px;
+  color: rgba(193,205,230,0.85);
+  font-style: italic;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1.2;
+}
+.guide-header-btn:hover { color: #f0f4ff; background: rgba(255,255,255,0.08); }
 .guide-float {
-  position: fixed;
-  right: 24px;
-  bottom: 20px;
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
   width: 320px;
-  max-width: calc(100vw - 32px);
-  background: rgba(255,255,255,0.92);
+  background: rgba(255,255,255,0.97);
   border: 1px solid rgba(219,226,240,0.94);
   border-radius: 24px;
   padding: 16px;
-  box-shadow: 0 20px 40px rgba(15,23,42,0.14);
+  box-shadow: 0 20px 40px rgba(15,23,42,0.18);
   backdrop-filter: blur(16px);
-  z-index: 140;
-  transition: transform 0.18s, opacity 0.18s, box-shadow 0.18s;
-}
-.guide-float .side-title {
-  margin-bottom: 10px;
-}
-.guide-float.collapsed {
-  width: 220px;
-  padding: 12px 14px;
-  overflow: hidden;
-}
-.guide-float.collapsed .guide-body {
+  z-index: 200;
   display: none;
 }
+.guide-float.open { display: block; }
+.guide-float .side-title { margin-bottom: 10px; }
 .guide-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
-.guide-toggle {
+.guide-close-btn {
   border: 1px solid #d7deeb;
   background: #fff;
   color: var(--text-2);
   border-radius: 999px;
-  padding: 6px 10px;
-  font-size: 11px;
-  font-weight: 700;
+  padding: 4px 9px;
+  font-size: 13px;
   cursor: pointer;
+  line-height: 1;
 }
-.guide-toggle:hover {
-  color: var(--text);
-  border-color: #c7d2e4;
-}
-.guide-mini {
-  display: none;
-  margin-top: 4px;
-  font-size: 11.5px;
-  color: var(--text-2);
-  line-height: 1.5;
-}
-.guide-float.collapsed .guide-mini {
-  display: block;
-}
+.guide-close-btn:hover { color: var(--text); border-color: #c7d2e4; }
 .project-list {
   display: flex;
   flex-direction: column;
@@ -757,6 +753,15 @@ body {
   background: #fff;
   border-left: 8px solid var(--p4-color);
   box-shadow: 0 6px 14px rgba(15,23,42,0.05);
+  cursor: pointer;
+  transition: background 0.14s, box-shadow 0.14s;
+  border-top: none; border-right: none; border-bottom: none;
+  text-align: left;
+  font-family: inherit;
+}
+.schedule-chip:hover {
+  background: #f0f4ff;
+  box-shadow: 0 8px 20px rgba(40,81,214,0.10);
 }
 .schedule-chip.p1 { border-left-color: var(--p1-color); }
 .schedule-chip.p2 { border-left-color: var(--p2-color); }
@@ -788,9 +793,16 @@ body {
   border-radius: 14px;
   background: #fff;
   border-left: 8px solid var(--p4-color);
+  border-top: none; border-right: none; border-bottom: none;
   padding: 10px 11px;
   box-shadow: 0 6px 14px rgba(15,23,42,0.04);
+  cursor: pointer;
+  transition: background 0.14s, box-shadow 0.14s;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
 }
+.schedule-focus-item:hover { background: #f0f4ff; box-shadow: 0 8px 20px rgba(40,81,214,0.10); }
 .schedule-focus-item.p1 { border-left-color: var(--p1-color); }
 .schedule-focus-item.p2 { border-left-color: var(--p2-color); }
 .schedule-focus-item.p3 { border-left-color: var(--p3-color); }
@@ -1578,12 +1590,6 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
     position: static;
     order: 2;
   }
-  .guide-float {
-    position: static;
-    width: 100%;
-    max-width: none;
-    margin-top: 16px;
-  }
 }
 @media (max-width: 600px) {
   .main { padding: 14px 12px 90px; }
@@ -1600,7 +1606,7 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
   .week-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .schedule-focus-list { grid-template-columns: 1fr; }
   .task-list { grid-template-columns: 1fr; }
-  .guide-float { padding: 14px; border-radius: 20px; }
+  .guide-float { padding: 14px; border-radius: 20px; right: 8px; width: calc(100vw - 24px); }
   .filter-bar { grid-template-columns: 1fr; }
   .task-card { padding-right: 12px; border-left-width: 12px; }
   .task-top { flex-direction: column; }
@@ -1665,6 +1671,41 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
         <span class="header-quote" id="header-quote"></span>
       </div>
       <div class="header-actions">
+        <div class="guide-actions-wrap">
+          <button class="guide-header-btn" id="guide-toggle" onclick="toggleGuidePanel()">使い方の目安</button>
+          <div class="guide-float" id="guide-float">
+            <div class="guide-header">
+              <div>
+                <div class="side-kicker">Guide</div>
+                <div class="side-title">使い方の目安</div>
+              </div>
+              <button class="guide-close-btn" type="button" onclick="toggleGuidePanel()">✕</button>
+            </div>
+            <div class="guide-body">
+              <div class="mini-list">
+                <div class="mini-item">
+                  <div class="mini-label">最初に見る場所</div>
+                  <div class="mini-value">「今週・緊急」で期限超過と今日やることを先に片付ける</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label">迷ったとき</div>
+                  <div class="mini-value" id="guide-focus">次の締切に近いタスクから進める</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label">動かし方</div>
+                  <div class="mini-value">カード下の進行ボタンで状態変更、手動並びではドラッグで順番変更</div>
+                </div>
+                <div class="mini-item">
+                  <div class="mini-label">保存状態</div>
+                  <div class="mini-value">右上の丸で同期状況がすぐわかります</div>
+                </div>
+              </div>
+              <div class="side-kicker" style="margin-top:12px;">Projects</div>
+              <div class="side-title">進行中プロジェクト</div>
+              <div class="project-list" id="guide-projects"></div>
+            </div>
+          </div>
+        </div>
         <div class="sync-indicator synced" id="sync-indicator">同期済み</div>
         <button class="btn btn-ghost" onclick="syncGitHub()" id="sync-btn">↻ 同期</button>
         <button class="btn btn-ghost btn-icon" onclick="toggleViewMode()" id="view-toggle" title="ビュー切替">⊞</button>
@@ -1772,7 +1813,6 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
         <section class="schedule-wrap">
           <div class="schedule-card">
             <div class="schedule-head">
-              <div class="schedule-title">2週間スケジュール</div>
               <div style="display:flex;align-items:center;gap:10px;">
                 <div class="schedule-caption" id="schedule-caption">今日から14日分の締切を視覚で把握</div>
                 <div class="schedule-nav">
@@ -1840,39 +1880,6 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
         </div>
       </section>
     </div>
-    <section class="guide-float" id="guide-float">
-      <div class="guide-header">
-        <div>
-          <div class="side-kicker">Guide</div>
-          <div class="side-title">使い方の目安</div>
-          <div class="guide-mini" id="guide-mini">必要なときだけ開いて確認</div>
-        </div>
-        <button class="guide-toggle" id="guide-toggle" type="button" onclick="toggleGuidePanel()">閉じる</button>
-      </div>
-      <div class="guide-body">
-      <div class="mini-list">
-        <div class="mini-item">
-          <div class="mini-label">最初に見る場所</div>
-          <div class="mini-value">「今週・緊急」で期限超過と今日やることを先に片付ける</div>
-        </div>
-        <div class="mini-item">
-          <div class="mini-label">迷ったとき</div>
-          <div class="mini-value" id="guide-focus">次の締切に近いタスクから進める</div>
-        </div>
-        <div class="mini-item">
-          <div class="mini-label">動かし方</div>
-          <div class="mini-value">カード下の進行ボタンで状態変更、手動並びではドラッグで順番変更</div>
-        </div>
-        <div class="mini-item">
-          <div class="mini-label">保存状態</div>
-          <div class="mini-value">右上の丸で同期状況がすぐわかります</div>
-        </div>
-      </div>
-      <div class="side-kicker" style="margin-top:12px;">Projects</div>
-      <div class="side-title">進行中プロジェクト</div>
-      <div class="project-list" id="guide-projects"></div>
-      </div>
-    </section>
   </div>
 
 </div>
@@ -1994,7 +2001,6 @@ let fileSha    = '';
 let syncState  = 'synced';
 let dragTaskId = null;
 let dragOverId = null;
-let guideAutoCloseTimer = null;
 let dailyQuote = null;
 let scheduleOffset = 0;
 let viewMode = 'list'; // 'list' or 'kanban'
@@ -2395,23 +2401,10 @@ function renderProjectGuide() {
       </div>`;
   }).join('') : '<div class="schedule-empty">進行中プロジェクトはありません</div>';
 }
-function setGuidePanelCollapsed(collapsed) {
-  const panel = document.getElementById('guide-float');
-  const toggle = document.getElementById('guide-toggle');
-  if (!panel || !toggle) return;
-  panel.classList.toggle('collapsed', collapsed);
-  toggle.textContent = collapsed ? '開く' : '閉じる';
-}
-function scheduleGuideAutoClose() {
-  clearTimeout(guideAutoCloseTimer);
-  guideAutoCloseTimer = setTimeout(() => setGuidePanelCollapsed(true), 4500);
-}
 function toggleGuidePanel() {
   const panel = document.getElementById('guide-float');
   if (!panel) return;
-  const collapsed = panel.classList.contains('collapsed');
-  setGuidePanelCollapsed(!collapsed);
-  if (collapsed) scheduleGuideAutoClose();
+  panel.classList.toggle('open');
 }
 function renderSchedules() {
   const activeDueTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了' && t.due));
@@ -2436,7 +2429,7 @@ function renderSchedules() {
           <span class="week-count">${items.length ? `${items.length}件` : ''}</span>
         </div>
         <div class="schedule-task-list">
-          ${items.length ? items.map(t => `<div class="schedule-chip ${P_CLASS[t.priority] || ''}">${escHtml(t.name)}</div>`).join('') : '<div class="schedule-empty">予定なし</div>'}
+          ${items.length ? items.map(t => `<button class="schedule-chip ${P_CLASS[t.priority] || ''}" onclick="openEditModal('${t.id}')" title="クリックして編集">${escHtml(t.name)}</button>`).join('') : '<div class="schedule-empty">予定なし</div>'}
         </div>
       </div>`;
   }).join('');
@@ -2466,10 +2459,10 @@ function renderSchedules() {
       <div class="schedule-focus-title">直近で詰まりやすいタスク</div>
       <div class="schedule-focus-list">
         ${urgent.length ? urgent.map(t => `
-          <div class="schedule-focus-item ${P_CLASS[t.priority] || ''}">
+          <button class="schedule-focus-item ${P_CLASS[t.priority] || ''}" onclick="openEditModal('${t.id}')" title="クリックして編集">
             <div class="schedule-focus-name">${escHtml(t.name)}</div>
             <div class="schedule-focus-meta">${escHtml(t.due ? formatDueText(t.due) : '締切未設定')}</div>
-          </div>`).join('') : '<div class="schedule-empty">注目タスクはありません</div>'}
+          </button>`).join('') : '<div class="schedule-empty">注目タスクはありません</div>'}
       </div>
     </div>`;
 }
@@ -2996,15 +2989,19 @@ function showToast(msg) {
 document.getElementById('task-modal').addEventListener('click', function(e) {
   if (e.target === this) closeModal();
 });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeModal();
+    document.getElementById('guide-float')?.classList.remove('open');
+  }
+});
+document.addEventListener('click', e => {
   const panel = document.getElementById('guide-float');
-  if (!panel) return;
-  scheduleGuideAutoClose();
-  panel.addEventListener('mouseenter', () => clearTimeout(guideAutoCloseTimer));
-  panel.addEventListener('mouseleave', () => {
-    if (!panel.classList.contains('collapsed')) scheduleGuideAutoClose();
-  });
+  const btn   = document.getElementById('guide-toggle');
+  if (!panel || !panel.classList.contains('open')) return;
+  if (!panel.contains(e.target) && (!btn || !btn.contains(e.target))) {
+    panel.classList.remove('open');
+  }
 });
 
 // ── Dark Mode ──
