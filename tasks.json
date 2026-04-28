@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "moi23nt3ytco",
+      "name": "タナカ建工　決算",
+      "priority": "🟡 高",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-05-08",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-28T00:00:00.000Z",
+      "order": -6
+    },
+    {
       "id": "moi231v36y60",
       "name": "シッピングポリシー更新",
       "priority": "🟡 高",
