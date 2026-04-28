@@ -17,20 +17,6 @@
       "completedAt": "2026-04-28T03:49:03.447Z"
     },
     {
-      "id": "moi1v40pfufw",
-      "name": "sldkf",
-      "priority": "🟢 中",
-      "tags": [],
-      "due": null,
-      "status": "未着手",
-      "memo": null,
-      "itemType": "project",
-      "isProject": true,
-      "subtasks": [],
-      "createdAt": "2026-04-28T00:00:00.000Z",
-      "order": -5
-    },
-    {
       "id": "moi1hcw1yaup",
       "name": "skjfda",
       "priority": "🟢 中",
