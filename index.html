@@ -2527,11 +2527,11 @@ function renderProjectRail() {
   let projects = tasks.filter(t => getItemType(t) === 'project' && t.status !== '完了');
   const search = (document.getElementById('filter-search')?.value || '').trim().toLowerCase();
   const priority = document.getElementById('filter-priority')?.value || '';
-  const status = document.getElementById('filter-status')?.value || '';
+  const statusVal = document.getElementById('filter-status')?.value || 'active';
   const tag = document.getElementById('filter-tag')?.value || '';
   if (search) projects = projects.filter(t => [t.name || '', t.memo || '', ...(t.tags || [])].join(' ').toLowerCase().includes(search));
   if (priority) projects = projects.filter(t => t.priority === priority);
-  if (status) projects = projects.filter(t => t.status === status);
+  if (statusVal && statusVal !== 'active' && statusVal !== '') projects = projects.filter(t => t.status === statusVal);
   if (tag) projects = projects.filter(t => (t.tags || []).includes(tag));
   projects = sortTasks(projects);
   count.textContent = `${projects.length}件`;
