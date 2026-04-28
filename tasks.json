@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "moi14egnr3ns",
+      "name": "ライオンズ　次年度予算案策定",
+      "priority": "🟡 高",
+      "tags": [
+        "ライオンズ関連"
+      ],
+      "due": "2026-05-06",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-28T00:00:00.000Z",
+      "order": -3
+    },
+    {
       "id": "moi0nx1rs64x",
       "name": "効率化　eBay顧客メッセージ対応ツール",
       "priority": "🟡 高",
