@@ -1,22 +1,6 @@
 {
   "tasks": [
     {
-      "id": "moi1hcw1yaup",
-      "name": "skjfda",
-      "priority": "🟢 中",
-      "tags": [
-        "コンサル・IT支援"
-      ],
-      "due": null,
-      "status": "未着手",
-      "memo": null,
-      "itemType": "project",
-      "isProject": true,
-      "subtasks": [],
-      "createdAt": "2026-04-28T00:00:00.000Z",
-      "order": -4
-    },
-    {
       "id": "moi14egnr3ns",
       "name": "ライオンズ　次年度予算案策定",
       "priority": "🟡 高",
