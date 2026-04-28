@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "moi20fj24674",
+      "name": "伊藤測量　経営力　３資産",
+      "priority": "🟡 高",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": null,
+      "status": "進行中",
+      "memo": "ハンディスキャナーの証明書取得し次第",
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-28T00:00:00.000Z",
+      "order": -4
+    },
+    {
       "id": "moi14egnr3ns",
       "name": "ライオンズ　次年度予算案策定",
       "priority": "🟡 高",
