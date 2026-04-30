@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "molglr24s3o4",
+      "name": "決算　タナカ建工",
+      "priority": "🟡 高",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-05-08",
+      "status": "進行中",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-30T00:00:00.000Z",
+      "order": -7
+    },
+    {
       "id": "moi36xpm42aw",
       "name": "間堀　大宮さん源泉徴収簿出力送付",
       "priority": "🟢 中",
