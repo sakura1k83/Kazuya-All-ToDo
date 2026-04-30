@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "molgmulhswu8",
+      "name": "決算　間堀建設",
+      "priority": "🟡 高",
+      "tags": [
+        "会計事務所"
+      ],
+      "due": "2026-05-22",
+      "status": "未着手",
+      "memo": null,
+      "itemType": "task",
+      "isProject": false,
+      "subtasks": [],
+      "createdAt": "2026-04-30T00:00:00.000Z",
+      "order": -9
+    },
+    {
       "id": "molgma3cqwag",
       "name": "決算　JRSI",
       "priority": "🟡 高",
