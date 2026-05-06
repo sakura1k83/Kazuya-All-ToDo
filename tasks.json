@@ -72,13 +72,14 @@
         "ライオンズ関連"
       ],
       "due": "2026-05-06",
-      "status": "未着手",
+      "status": "完了",
       "memo": null,
       "itemType": "task",
       "isProject": false,
       "subtasks": [],
       "createdAt": "2026-04-28T00:00:00.000Z",
-      "order": -3
+      "order": -3,
+      "completedAt": "2026-05-06T01:19:57.204Z"
     },
     {
       "id": "moi0nx1rs64x",
