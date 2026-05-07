@@ -1,6 +1,22 @@
 {
   "tasks": [
     {
+      "id": "mov95ionrj2t",
+      "name": "CVRとCTRの改善活動",
+      "priority": "🟡 高",
+      "tags": [
+        "eBay事業"
+      ],
+      "due": null,
+      "status": "未着手",
+      "memo": null,
+      "itemType": "project",
+      "isProject": true,
+      "subtasks": [],
+      "createdAt": "2026-05-07T00:00:00.000Z",
+      "order": -10
+    },
+    {
       "id": "molgmulhswu8",
       "name": "決算　間堀建設",
       "priority": "🟡 高",
