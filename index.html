@@ -2115,11 +2115,21 @@ function renderSyncPanel(status) {
   document.getElementById('sync-reimport').hidden = false;
 }
 
-async function toggleSyncSource(key, sw) {
-  const next = { ...syncConfig, [key]: syncConfig[key] === false };
+// トグルPOSTの直列化キュー。連続トグル時に「古いsyncConfigから組んだスナップショット」が
+// 送られて先行の変更を潰す競合（応答順依存）を防ぐ。nextは各POSTの実行時点で最新stateから組む。
+let syncConfigQueue = Promise.resolve();
+
+function toggleSyncSource(key, sw) {
   const k = getSyncKey();
   if (!k) return;
   sw.disabled = true;
+  syncConfigQueue = syncConfigQueue
+    .then(() => postSyncConfig(key, k))
+    .finally(() => { sw.disabled = false; });
+}
+
+async function postSyncConfig(key, k) {
+  const next = { ...syncConfig, [key]: syncConfig[key] === false };
   try {
     const res = await syncFetch('/api/sync-config', {
       method: 'POST',
@@ -2138,8 +2148,6 @@ async function toggleSyncSource(key, sw) {
     showToast(next[key] !== false ? '同期をオンにしました' : '同期をオフにしました');
   } catch {
     showToast('設定の保存に失敗しました');
-  } finally {
-    sw.disabled = false;
   }
 }
 
