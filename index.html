@@ -1594,6 +1594,52 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
   }
 }
 
+/* ==== 同期パネル（ローカルサーバー連携・PC専用のlocal拡張） ==== */
+.sync-list { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.sync-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+}
+.sync-row-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.sync-row-name { font-size: var(--text-caption); font-weight: var(--weight-medium); color: var(--text); }
+.sync-row-last { font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.sync-row.off .sync-row-name { color: var(--text-3); }
+.sync-switch {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 20px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.sync-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.sync-switch[aria-checked="true"] { background: var(--accent); border-color: var(--accent); }
+.sync-switch[aria-checked="true"]::after { transform: translateX(14px); border-color: var(--accent-strong); }
+.sync-switch:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.sync-switch:disabled { opacity: 0.45; cursor: not-allowed; }
+.sync-reimport { width: 100%; justify-content: center; margin-top: 10px; padding: 9px 14px; font-size: var(--text-caption); }
+
 </style>
 </head>
 <body class="ds-root">
@@ -1716,6 +1762,14 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
             <button class="jump-btn" type="button" onclick="filterByCategory('ライオンズ関連', this)"><span>ライオンズ関連</span><span class="jump-count" id="jump-lions">0</span></button>
             <button class="jump-btn" type="button" onclick="toggleArchive()"><span>完了を表示</span><span class="jump-count" id="jump-archive">—</span></button>
           </div>
+        </section>
+
+        <section class="side-card" id="sync-panel" hidden>
+          <div class="side-kicker">Sync</div>
+          <div class="side-title">外部ソース同期</div>
+          <div class="side-note" id="sync-note" hidden>ローカルサーバー未接続。PCで同期サーバーが動いているときに設定できます（カレンダー等の取込は朝会からも実行されます）。</div>
+          <div class="sync-list" id="sync-list"></div>
+          <button class="btn btn-ghost sync-reimport" type="button" id="sync-reimport" onclick="reimportMykomon()" hidden>マイ顧問を再取込</button>
         </section>
 
       </aside>
@@ -1976,6 +2030,149 @@ function applyTheme() {
     if (btn) btn.textContent = '☀️';
   }
 }
+// ==== 同期設定パネル（ローカルサーバー :8767 連携・PC専用） ====
+// 設定・状態の正本は <WS>/.claude/sync/*.json。書込POSTはローカル連携キー
+// （static-server.cjsのSAVE_TOKEN・初回のみ入力→localStorage保存）で認証する。
+// ※連携キーやトークン類をこのファイルへ直書きしない（公開リポジトリのため）。
+const SYNC_API = 'http://127.0.0.1:8767';
+const SYNC_KEY_STORAGE = 'sync_local_key';
+const SYNC_SOURCES = [
+  { key: 'gcal',    label: 'Googleカレンダー' },
+  { key: 'gmail',   label: 'Gmail（ToDoラベル）' },
+  { key: 'mykomon', label: 'マイ顧問' },
+];
+let syncConfig = null;
+
+function syncFetch(path, opts = {}, timeoutMs = 2500) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), timeoutMs);
+  return fetch(SYNC_API + path, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(t));
+}
+
+function getSyncKey() {
+  let k = localStorage.getItem(SYNC_KEY_STORAGE);
+  if (!k) {
+    k = (prompt('ローカル連携キーを入力してください（.claude/static-server.cjs の SAVE_TOKEN）') || '').trim();
+    if (k) localStorage.setItem(SYNC_KEY_STORAGE, k);
+  }
+  return k;
+}
+
+function syncRelTime(iso) {
+  if (!iso) return '未実行';
+  const min = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
+  if (min < 1) return 'たった今';
+  if (min < 60) return `${min}分前`;
+  if (min < 24 * 60) return `${Math.floor(min / 60)}時間前`;
+  return `${Math.floor(min / (24 * 60))}日前`;
+}
+
+async function loadSyncPanel() {
+  const panel = document.getElementById('sync-panel');
+  if (!panel) return;
+  // Pages(https)からは混在コンテンツ制限でローカルサーバーへ届かないため、パネル自体を出さない
+  if (location.protocol === 'https:') return;
+  panel.hidden = false;
+  try {
+    const [cfgRes, stRes] = await Promise.all([syncFetch('/api/sync-config'), syncFetch('/api/sync-status')]);
+    if (!cfgRes.ok || !stRes.ok) throw new Error('unreachable');
+    syncConfig = await cfgRes.json();
+    renderSyncPanel(await stRes.json());
+  } catch {
+    document.getElementById('sync-note').hidden = false;
+    document.getElementById('sync-list').innerHTML = '';
+    document.getElementById('sync-reimport').hidden = true;
+  }
+}
+
+function renderSyncPanel(status) {
+  document.getElementById('sync-note').hidden = true;
+  const list = document.getElementById('sync-list');
+  list.innerHTML = '';
+  for (const src of SYNC_SOURCES) {
+    const on = syncConfig[src.key] !== false;
+    const row = document.createElement('div');
+    row.className = 'sync-row' + (on ? '' : ' off');
+    const meta = document.createElement('div');
+    meta.className = 'sync-row-meta';
+    const name = document.createElement('span');
+    name.className = 'sync-row-name';
+    name.textContent = src.label;
+    const last = document.createElement('span');
+    last.className = 'sync-row-last';
+    last.textContent = on ? `最終同期: ${syncRelTime(status[src.key]?.lastRun)}` : '同期オフ';
+    meta.append(name, last);
+    const sw = document.createElement('button');
+    sw.type = 'button';
+    sw.className = 'sync-switch';
+    sw.setAttribute('role', 'switch');
+    sw.setAttribute('aria-checked', String(on));
+    sw.setAttribute('aria-label', `${src.label}の同期`);
+    sw.onclick = () => toggleSyncSource(src.key, sw);
+    row.append(meta, sw);
+    list.appendChild(row);
+  }
+  document.getElementById('sync-reimport').hidden = false;
+}
+
+async function toggleSyncSource(key, sw) {
+  const next = { ...syncConfig, [key]: syncConfig[key] === false };
+  const k = getSyncKey();
+  if (!k) return;
+  sw.disabled = true;
+  try {
+    const res = await syncFetch('/api/sync-config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-tax-token': k },
+      body: JSON.stringify(next),
+    });
+    if (res.status === 401 || res.status === 403) {
+      localStorage.removeItem(SYNC_KEY_STORAGE);
+      showToast('連携キーが違います · もう一度お試しください');
+      return;
+    }
+    if (!res.ok) throw new Error(String(res.status));
+    syncConfig = next;
+    const stRes = await syncFetch('/api/sync-status');
+    renderSyncPanel(stRes.ok ? await stRes.json() : {});
+    showToast(next[key] !== false ? '同期をオンにしました' : '同期をオフにしました');
+  } catch {
+    showToast('設定の保存に失敗しました');
+  } finally {
+    sw.disabled = false;
+  }
+}
+
+async function reimportMykomon() {
+  const btn = document.getElementById('sync-reimport');
+  const k = getSyncKey();
+  if (!k) return;
+  btn.disabled = true;
+  btn.textContent = '再取込中…';
+  try {
+    const res = await syncFetch('/api/mykomon-todos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-tax-token': k },
+      body: JSON.stringify({ reimport: true }),
+    }, 35000);
+    if (res.status === 401 || res.status === 403) {
+      localStorage.removeItem(SYNC_KEY_STORAGE);
+      showToast('連携キーが違います · もう一度お試しください');
+      return;
+    }
+    if (!res.ok) throw new Error(String(res.status));
+    showToast('マイ顧問を再取込しました');
+    syncGitHub();
+    const stRes = await syncFetch('/api/sync-status');
+    if (stRes.ok) renderSyncPanel(await stRes.json());
+  } catch {
+    showToast('再取込に失敗しました · サーバー起動を確認してください');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'マイ顧問を再取込';
+  }
+}
+
 function init() {
   applyTheme();
   loadTemplates();
@@ -1990,6 +2187,7 @@ function init() {
   ensureDailyQuote();
   setInterval(ensureDailyQuote, 60 * 60 * 1000); // 1時間ごとに日付チェック
   updateSyncIndicator('synced', '同期前');
+  loadSyncPanel();
   if (!ghToken) {
     document.getElementById('setup-view').classList.add('active');
   } else {
