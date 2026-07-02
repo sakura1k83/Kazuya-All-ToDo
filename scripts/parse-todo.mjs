@@ -25,20 +25,21 @@ const textOf = (s) => decodeEntities(String(s).replace(/<[^>]*>/g, ' ')).replace
 
 export function parseTodoHtml(html) {
   const items = [];
-  const rowRe = /<tr[^>]*\bclass="[^"]*todo_row[^"]*"[^>]*\bid="todo_(\d+)"[^>]*>([\s\S]*?)<\/tr>/g;
+  // ※マイ顧問のHTMLは属性クォートが混在（listTodo=ダブル・viewWeekly=シングル）。["']で両対応する
+  const rowRe = /<tr[^>]*\bclass=["'][^"']*todo_row[^"']*["'][^>]*\bid=["']todo_(\d+)["'][^>]*>([\s\S]*?)<\/tr>/g;
   for (const m of String(html).matchAll(rowRe)) {
     const [, todoId, row] = m;
-    const nameMatch = row.match(/<td[^>]*\bclass="[^"]*\btitle\b[^"]*"[^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/);
+    const nameMatch = row.match(/<td[^>]*\bclass=["'][^"']*\btitle\b[^"']*["'][^>]*>[\s\S]*?<a[^>]*>([\s\S]*?)<\/a>/);
     const name = nameMatch ? textOf(nameMatch[1]) : '';
     if (!name) continue;
     const state = (row.match(/complete_status_view[^>]*>([^<]*)</) || [, ''])[1].trim();
     if (state === '完了') continue;
     const dateIn = (cls) => {
-      const cell = (row.match(new RegExp(`<td[^>]*\\bclass="[^"]*todo_date ${cls}[^"]*"[^>]*>[\\s\\S]*?<\\/td>`)) || [''])[0];
+      const cell = (row.match(new RegExp(`<td[^>]*\\bclass=["'][^"']*todo_date ${cls}[^"']*["'][^>]*>[\\s\\S]*?<\\/td>`)) || [''])[0];
       const d = cell.match(/(\d{4})\/(\d{2})\/(\d{2})/);
       return d ? `${d[1]}-${d[2]}-${d[3]}` : null;
     };
-    const catMatch = row.match(/<td[^>]*\bclass="[^"]*\bcategory\b[^"]*"[^>]*>([\s\S]*?)<\/td>/);
+    const catMatch = row.match(/<td[^>]*\bclass=["'][^"']*\bcategory\b[^"']*["'][^>]*>([\s\S]*?)<\/td>/);
     const cat = catMatch ? textOf(catMatch[1]) : '';
     const pri = (row.match(/priority_label_\w+[^>]*>([^<]*)</) || [, ''])[1].trim();
     items.push({

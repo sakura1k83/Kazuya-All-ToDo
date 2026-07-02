@@ -1,0 +1,78 @@
+<!-- マイ顧問 /groupware/viewWeekly の実HTML構造（2026-07-02採取・fetch生HTML準拠）を再現したテストfixture。
+     名称・IDはすべてダミー。実データ（顧問先名・実予定）は絶対に入れないこと（公開リポジトリのため）。
+     ※実物は属性クォートが混在する（tableタグ=ダブル・td/div=シングル・classに末尾スペースあり）。
+       このfixtureも意図的に混在させ、パーサのクォート非依存を担保する。 -->
+<table class="calendar gw_parts myself_block">
+  <thead>
+    <tr><th style='width: 120px;'>2026年</th><th><a href='javascript:viewDaily(20260629, false)'>6/29 (月)</a></th></tr>
+  </thead>
+  <tr class='calendar_row user_0000000000000000 tr_user_0000000000000000'>
+    <td rowspan='2' class='sche_todo_block date_20260629 td_20260629 '>
+      <div class='day_main'>
+        <div class='job_job'>
+          <div class='job_unit draggable_user dnd_on'>
+            <div class='job_time'>15:00-16:00</div>
+            <div class='job_title'><a data-schedule-id='90000001' data-date='20260629' href='/groupware/refScheduleView?scheduleId=90000001'>過去の打合せ（取込まない）</a></div>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td rowspan='2' class='sche_todo_block date_20260701 td_20260701 '>
+      <div class='day_main'>
+        <div class='job_job'>
+          <div class='job_unit draggable_user dnd_on'>
+            <div class='job_time'>09:30-10:30</div>
+            <div class='job_title'><a data-schedule-id='10000001' href='/groupware/refScheduleView?scheduleId=10000001'>(株)ダミー商事 定例訪問 &amp; 資料回収</a><span class='g_ic_outer'></span></div>
+          </div>
+          <div class='job_unit draggable_user dnd_on'>
+            <div class='job_time'>18:30-19:30</div>
+            <div class='job_title'><a href='/groupware/refScheduleView?scheduleId=10000002'>所内勉強会</a></div>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td rowspan='2' class='sche_todo_block date_20260702 td_20260702 '>
+      <div class='day_main'>
+        <div class='job_job'>
+          <div class='job_unit draggable_user dnd_on'>
+            <div class='job_time'>0h00m</div>
+            <div class='job_title'><a href='/groupware/refScheduleView?scheduleId=10000003'>午前 仮</a></div>
+          </div>
+          <div class='job_unit draggable_user dnd_on'>
+            <div class='job_time'>10:00-7/7</div>
+            <div class='job_title'><a href='/groupware/refScheduleView?scheduleId=10000004'>巡回</a></div>
+          </div>
+        </div>
+      </div>
+    </td>
+    <td rowspan='2' class="sche_todo_block date_20260703 td_20260703">
+      <div class="day_main">
+        <div class="job_job">
+          <div class="job_unit draggable_user dnd_on">
+            <div class="job_time">7/2-7/7</div>
+            <div class="job_title"><a href="/groupware/refScheduleView?scheduleId=10000004">巡回</a></div>
+          </div>
+        </div>
+        <div class="job_job">
+          <div class="todo_unit">
+            <div class="job_title"><a href="/groupware/refTodoView?todoId=12345678">ToDoは予定として取込まない</a></div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+<table class="calendar gw_parts member_block">
+  <tr class='calendar_row user_9999999999999999'>
+    <td class='sche_todo_block date_20260702 td_20260702 '>
+      <div class='day_main'>
+        <div class='job_job'>
+          <div class='job_unit'>
+            <div class='job_time'>13:00-14:00</div>
+            <div class='job_title'><a href='/groupware/refScheduleView?scheduleId=20000001'>他メンバーの予定（対象外）</a></div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
