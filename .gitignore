@@ -1,0 +1,6 @@
+node_modules/
+*.pre-redesign.bak.html
+.claude/settings.local.json
+.gh-pat.txt
+# データと認証情報は公開リポジトリに入れない（正本は非公開のKazuya-All-ToDo-data）
+tasks.json

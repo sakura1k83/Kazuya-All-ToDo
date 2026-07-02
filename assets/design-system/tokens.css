@@ -1,0 +1,126 @@
+/* ============================================================
+   Summit Luxe Sakura / K'nMing Advisory — 共通デザイントークン
+   tokens.css  ── Single Source of Truth（値の正本）
+   ------------------------------------------------------------
+   由来 : refero「Apple」のニュートラル規律 ＋「Steep」のエディトリアルな
+          高級感（セリフ×サンセリフ／warm-gray／暖色アクセント／ウォッシュ）。
+   方針 : register=product / Restrained（warmニュートラル＋暖色アクセント1色＋状態色）。
+          色は OKLCH。純黒/純白は使わず全色を warm（hue≈70）へ極淡く傾斜。
+          見出しはセリフ（明朝）で品格、本文は読み疲れないサンセリフ。
+   フォント: Fraunces（欧文セリフ）× しっぽり明朝（和文）を fonts/ に同梱
+          （SIL OFL・外部通信なしのローカル完結）。OS標準書体へフォールバック。
+   理由   : references.md を参照。値はここが正本。ツール側でハードコード禁止。
+   ============================================================ */
+
+@import url("fonts.css");   /* 同梱書体の @font-face（tokens.css からの相対参照） */
+
+:root {
+  /* --- Color : Neutrals / Surfaces（warm-gray＝大理石の上質さ） --- */
+  --bg:            oklch(0.975 0.003 80);    /* ページ背景（Steep Fog相当・温かい白） */
+  --surface:       oklch(0.995 0.002 80);    /* カード面（純白回避・暖か味の白） */
+  --surface-2:     oklch(0.963 0.004 80);    /* 沈めた面 recessed / セクション地 */
+  --surface-dark:  oklch(0.250 0.008 70);    /* Inkダーク面（Steep Ink #17191c・純黒回避） */
+  --border:        oklch(0.890 0.005 80);    /* ヘアライン境界（Steep Dove相当） */
+  --border-strong: oklch(0.820 0.006 80);    /* 入力欄・濃いめ境界 */
+
+  /* --- Color : Text ----------------------------------------- */
+  --text:          oklch(0.250 0.008 70);    /* 本文・見出し（Steep Ink） */
+  --text-2:        oklch(0.480 0.006 70);    /* 副次（Steep Ash #4c4c4c） */
+  --text-3:        oklch(0.620 0.007 70);    /* 三次・プレースホルダ（Steep Graphite） */
+  --text-on-dark:  oklch(0.985 0.003 80);    /* ダーク面/Ink塗り上の文字 */
+
+  /* --- Color : Accent（暖色1色を句読点のように。主操作はInk塗り） --- */
+  --ink:           var(--surface-dark);      /* 主CTA塗り＝Inkダーク（Steepの作法） */
+  --accent:        oklch(0.550 0.120 45);    /* テラコッタ（リンク・強調・選択） */
+  --accent-strong: oklch(0.400 0.080 45);    /* 深いラスト（Steep #5d2a1a・hover/押下） */
+  --accent-bg:     oklch(0.920 0.045 55);    /* Apricotウォッシュ（淡い暖色面・選択中） */
+  --link:          oklch(0.470 0.090 45);    /* 本文中リンク（テラコッタ濃い目） */
+
+  /* --- Color : Washes（データ/セクションの上質な色味づけ） ------- */
+  --wash-warm:     oklch(0.920 0.045 55);    /* Apricot Wash #fbe1d1 */
+  --wash-cool:     oklch(0.910 0.040 250);   /* Sky Wash #d3e3fc */
+
+  /* --- Color : Status（業務に必須。エレガント palette へ抑制） ---- */
+  --success:       oklch(0.550 0.100 150);
+  --success-bg:    oklch(0.935 0.035 150);
+  --warning:       oklch(0.680 0.100 75);
+  --warning-bg:    oklch(0.945 0.040 75);
+  --danger:        oklch(0.500 0.150 35);    /* 暖色寄りの赤（palette と調和） */
+  --danger-bg:     oklch(0.930 0.040 40);
+  --info:          oklch(0.550 0.090 250);
+  --info-bg:       var(--wash-cool);
+
+  /* --- Typography ------------------------------------------- */
+  /* 見出し＝セリフ/明朝（品格）。Latin=Fraunces、和文=しっぽり明朝（共に同梱）。
+     未ロード時は OS標準のセリフ/明朝へ自然フォールバック */
+  --font-serif: 'Fraunces', 'Shippori Mincho', Georgia, 'Times New Roman',
+                'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho',
+                'Noto Serif JP', serif;
+  /* 本文＝読み疲れないサンセリフ */
+  --font-sans:  -apple-system, BlinkMacSystemFont, 'Hiragino Sans',
+                'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans JP',
+                system-ui, sans-serif;
+  --font-num:   var(--font-sans);
+
+  /* size / line-height / tracking
+     見出しはセリフ・負トラッキングで凝縮、本文は ゆったり行間で疲れにくく */
+  --text-caption:   13px; --leading-caption: 1.50; --tracking-caption: -0.006em;
+  --text-body-sm:   14px; --leading-body-sm: 1.55; --tracking-body-sm: -0.008em;
+  --text-body:      15px; --leading-body:    1.62; --tracking-body:    -0.010em;  /* 既定本文・ゆったり */
+  --text-body-lg:   17px; --leading-body-lg: 1.55; --tracking-body-lg: -0.011em;
+  --text-h-sm:      19px; --leading-h-sm:    1.40; --tracking-h-sm:    -0.012em;  /* 小見出し＝サンセリフ */
+  --text-h:         23px; --leading-h:       1.28; --tracking-h:       -0.018em;  /* セリフ */
+  --text-h-lg:      30px; --leading-h-lg:    1.20; --tracking-h-lg:    -0.022em;  /* セリフ */
+  --text-display:   40px; --leading-display: 1.14; --tracking-display: -0.026em;  /* セリフ・エディトリアル */
+
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* --- Spacing（4px基準・程よい余白でゆとり） ------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  --card-padding: 22px;   /* Steep寄りのゆとり（Apple28とApple業務18の中庸） */
+  --page-max:     1200px;
+  --content-max:  70ch;   /* 本文行長の上限（65–75ch） */
+
+  /* --- Radius（Steepの寛大さを採用しつつ業務で使える範囲に） ---- */
+  --radius-sm:   10px;
+  --radius-md:   16px;    /* カード既定（ceramic tile 感） */
+  --radius-lg:   20px;
+  --radius-pill: 999px;
+
+  /* --- Elevation（Steep流の柔らかな浮遊。多重影は2層まで） ------ */
+  --shadow-card:    0 1px 2px oklch(0.25 0.02 70 / 0.05),
+                    0 10px 24px -10px oklch(0.25 0.03 70 / 0.12);
+  --shadow-overlay: 0 2px 6px oklch(0.25 0.02 70 / 0.08),
+                    0 16px 32px -8px oklch(0.25 0.03 70 / 0.16);
+  --ring-focus:     0 0 0 3px oklch(0.550 0.120 45 / 0.30); /* テラコッタのフォーカス */
+
+  /* --- Backdrop（モーダル/オーバーレイ背後の暗幕） ------------- */
+  --overlay-backdrop: oklch(0.25 0.02 70 / 0.45);
+
+  /* --- Motion（ease-out系・bounce不可・layoutはアニメしない） --- */
+  --dur-fast:   120ms;
+  --dur-normal: 220ms;
+  --dur-slow:   360ms;
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);   /* ease-out-quint 近似 */
+
+  /* --- z-index --------------------------------------------- */
+  --z-nav:     100;
+  --z-overlay: 200;
+  --z-modal:   300;
+  --z-toast:   400;
+}
+
+:where(html) { color-scheme: light; }

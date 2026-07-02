@@ -1,0 +1,194 @@
+/* ============================================================
+   共通コンポーネント  components.css
+   ------------------------------------------------------------
+   tokens.css に依存（先に読み込むこと）。色・余白・形は全て var(--…) 参照。
+   命名は ds- 接頭辞で衝突回避。
+   特徴: 見出しはセリフ/明朝（品格）、本文は読み疲れないサンセリフ。
+         主操作は Ink ダーク塗り、暖色アクセントは句読点のように抑制。
+   ============================================================ */
+
+/* --- Base / Reset（最小限） ------------------------------- */
+.ds-root {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.ds-root *,
+.ds-root *::before,
+.ds-root *::after { box-sizing: border-box; }
+
+/* --- Typography helpers --------------------------------- */
+/* 見出し（display / h-lg / h）＝セリフ。小見出し以下はサンセリフ。 */
+.ds-display { font-family: var(--font-serif); font-weight: var(--weight-regular); font-size: var(--text-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+.ds-h-lg    { font-family: var(--font-serif); font-weight: var(--weight-regular); font-size: var(--text-h-lg); line-height: var(--leading-h-lg); letter-spacing: var(--tracking-h-lg); }
+.ds-h       { font-family: var(--font-serif); font-weight: var(--weight-regular); font-size: var(--text-h); line-height: var(--leading-h); letter-spacing: var(--tracking-h); }
+.ds-h-sm    { font-size: var(--text-h-sm); line-height: var(--leading-h-sm); letter-spacing: var(--tracking-h-sm); font-weight: var(--weight-semibold); }
+.ds-body-lg { font-size: var(--text-body-lg); line-height: var(--leading-body-lg); letter-spacing: var(--tracking-body-lg); }
+.ds-caption { font-size: var(--text-caption); line-height: var(--leading-caption); letter-spacing: var(--tracking-caption); color: var(--text-2); }
+.ds-muted   { color: var(--text-2); }
+.ds-num     { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+/* --- Link ----------------------------------------------- */
+.ds-link {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: var(--weight-medium);
+  text-underline-offset: 2px;
+}
+.ds-link:hover { text-decoration: underline; }
+.ds-link--ext::after { content: " \2197"; font-weight: var(--weight-regular); } /* ↗ 外部導線 */
+
+/* --- Button --------------------------------------------- */
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-body-sm);
+  line-height: 1;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);     /* Steep作法＝ピル */
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              color var(--dur-fast) var(--ease-out);
+}
+.ds-btn:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+.ds-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* 主操作＝Inkダーク塗り（画面の主役の操作に） */
+.ds-btn--primary { background: var(--ink); color: var(--text-on-dark); }
+.ds-btn--primary:hover:not(:disabled) { filter: brightness(1.35); }
+
+/* 副操作＝ゴースト枠（テキストリンクでも可） */
+.ds-btn--ghost { background: transparent; color: var(--text); border-color: var(--border-strong); }
+.ds-btn--ghost:hover:not(:disabled) { background: var(--surface-2); border-color: var(--text-3); }
+
+/* 暖色アクセント塗り（限定使用） */
+.ds-btn--accent { background: var(--accent); color: var(--text-on-dark); }
+.ds-btn--accent:hover:not(:disabled) { background: var(--accent-strong); }
+
+.ds-btn--danger { background: var(--danger); color: var(--text-on-dark); }
+.ds-btn--danger:hover:not(:disabled) { filter: brightness(0.95); }
+
+.ds-btn--sm { padding: 7px 14px; font-size: var(--text-caption); }
+.ds-btn--square { border-radius: var(--radius-sm); }   /* 矩形にしたい時 */
+
+/* --- Card（柔らかな浮遊。標準は淡い影、recessedは面差のみ） ---- */
+.ds-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-card);
+}
+.ds-card--flat { box-shadow: none; }                            /* 密なリスト用 */
+.ds-card--recessed { background: var(--surface-2); border-color: var(--border); box-shadow: none; }
+.ds-card--dark { background: var(--surface-dark); color: var(--text-on-dark); border-color: transparent; }
+.ds-card--warm { background: var(--wash-warm); border-color: transparent; box-shadow: none; }
+.ds-card--cool { background: var(--wash-cool); border-color: transparent; box-shadow: none; }
+
+/* --- Input ---------------------------------------------- */
+.ds-input,
+.ds-select,
+.ds-textarea {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 13px;
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+.ds-input::placeholder, .ds-textarea::placeholder { color: var(--text-3); }
+.ds-input:focus, .ds-select:focus, .ds-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: var(--ring-focus);
+}
+.ds-label { display: block; font-size: var(--text-body-sm); font-weight: var(--weight-medium); color: var(--text-2); margin-bottom: var(--space-1); }
+
+/* --- Badge（status 4種・ピル） -------------------------- */
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  line-height: 1;
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+}
+.ds-badge--neutral { background: var(--surface-2); color: var(--text-2); }
+.ds-badge--success { background: var(--success-bg); color: var(--success); }
+.ds-badge--warning { background: var(--warning-bg); color: oklch(0.45 0.09 75); }
+.ds-badge--danger  { background: var(--danger-bg); color: var(--danger); }
+.ds-badge--info    { background: var(--info-bg); color: var(--info); }
+
+/* --- Table ---------------------------------------------- */
+.ds-table { width: 100%; border-collapse: collapse; font-size: var(--text-body); }
+.ds-table th {
+  text-align: left;
+  font-weight: var(--weight-semibold);
+  color: var(--text-2);
+  font-size: var(--text-body-sm);
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border-strong);
+}
+.ds-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+.ds-table tr:last-child td { border-bottom: none; }
+.ds-table tbody tr:hover { background: var(--surface-2); }
+
+/* --- Progress ------------------------------------------- */
+.ds-progress {
+  height: 8px;
+  background: var(--surface-2);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.ds-progress__bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: inherit;
+  transition: width var(--dur-slow) var(--ease-out);
+}
+
+/* --- Nav（簡素な上部バー） ------------------------------- */
+.ds-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  height: 60px;
+  padding: 0 var(--space-6);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.ds-nav__brand { font-family: var(--font-serif); font-size: var(--text-h-sm); letter-spacing: var(--tracking-h); }
+.ds-nav__link { color: var(--text-2); text-decoration: none; font-size: var(--text-body-sm); font-weight: var(--weight-medium); }
+.ds-nav__link:hover, .ds-nav__link[aria-current="page"] { color: var(--text); }
+
+/* --- Overlay surfaces ----------------------------------- */
+.ds-overlay {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-overlay);
+}
+
+/* --- Accessibility -------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ds-root *, .ds-root *::before, .ds-root *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
