@@ -24,12 +24,15 @@ const decodeEntities = (s) => s
 
 const textOf = (s) => decodeEntities(String(s).replace(/<[^>]*>/g, ' ')).replace(/\s+/g, ' ').trim();
 
-export function parseScheduleHtml(html, todayYmd) {
+export function parseScheduleHtml(html, todayYmd, userNo) {
   const items = [];
   const seen = new Set();
   // ※マイ顧問のHTMLは属性クォートが混在（viewWeekly=シングル・listTodo=ダブル）。["']で両対応する
   const tableMatch = String(html).match(/<table[^>]*\bclass=["'][^"']*\bmyself_block\b[^"']*["'][^>]*>([\s\S]*?)<\/table>/);
   if (!tableMatch) return items;
+  // 行の持ち主ガード（userNo指定時）: myself_blockの行が本人（tr_user_<userNo>）でなければ
+  // 一切取込まない（fail-closed）。他人の予定を誤って取込むくらいなら0件のほうがよい。
+  if (userNo && !new RegExp(`\\btr_user_${userNo}\\b`).test(tableMatch[1])) return items;
   const cellRe = /<td[^>]*\bclass=["'][^"']*\bsche_todo_block\b[^"']*\bdate_(\d{8})[^"']*["'][^>]*>([\s\S]*?)<\/td>/g;
   for (const cm of tableMatch[1].matchAll(cellRe)) {
     const [, ymd, cell] = cm;
@@ -39,6 +42,10 @@ export function parseScheduleHtml(html, todayYmd) {
     for (const seg of segments) {
       const idMatch = seg.match(/refScheduleView\?scheduleId=(\d+)[^>]*>([\s\S]*?)<\/a>/);
       if (!idMatch) continue; // ToDoチェックボックス等・予定以外
+      // 予定単位の持ち主ガード（第2層・fail-closed）: userNo指定時はdata-user-noの一致を必須とする。
+      // 属性欠落も拒否（2026-07-03実測で全予定単位に付与されているため、欠落＝構造変化のシグナル）
+      const segUser = (seg.match(/data-user-no=["'](\d+)["']/) || [])[1];
+      if (userNo && segUser !== String(userNo)) continue;
       const sourceId = `s${idMatch[1]}`;
       if (seen.has(sourceId)) continue; // 複数日予定は最初の出現（今日以降で最も早いセル）のみ
       const name = textOf(idMatch[2]);
