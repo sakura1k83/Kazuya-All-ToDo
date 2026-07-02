@@ -9,8 +9,11 @@
 //         <div class="job_time">11:00-12:00</div>    ← 時刻。"0h00m"=時刻なし・"10:00-7/7"=複数日開始・"7/2-7/7"=複数日中間
 //         <div class="job_title"><a href="…refScheduleView?scheduleId=数字ID">件名</a></div>
 //       </div>
-//   複数日予定は毎日のセルに同じscheduleIdで現れる → 最初の出現（開始側）だけ残す。
-// 方針: 過去の予定は取込まない（朝会の優先度づけに不要）。todayYmd（"YYYYMMDD"）より前のセルはスキップ。
+//   複数日予定は毎日のセルに同じscheduleIdで現れる → 最初の出現だけ残す。
+// 方針: 終了済みの予定（全セルがtodayYmdより前）は取込まない（朝会の優先度づけに不要）。
+//   **進行中の複数日予定（開始は過去だが今日以降のセルに現れる）は取込む**＝今日を占有する予定として
+//   朝会に出すのが目的に適う。due=最初の今日以降セル。翌日の再同期でdueが当日側へ追従するのは仕様
+//   （取込タスクのname/due/memoは元システムが正、という契約と一貫）。
 // sourceIdは "s"+scheduleId（listTodoのtodoIdとID空間を分離し、mykomonソース1本で共存させる）。
 
 const decodeEntities = (s) => s
@@ -30,14 +33,14 @@ export function parseScheduleHtml(html, todayYmd) {
   const cellRe = /<td[^>]*\bclass=["'][^"']*\bsche_todo_block\b[^"']*\bdate_(\d{8})[^"']*["'][^>]*>([\s\S]*?)<\/td>/g;
   for (const cm of tableMatch[1].matchAll(cellRe)) {
     const [, ymd, cell] = cm;
-    if (todayYmd && ymd < String(todayYmd)) continue; // 過去日
+    if (todayYmd && ymd < String(todayYmd)) continue; // 過去セル（進行中の複数日予定は今日以降のセルで拾う）
     // job_unit境界で分割（unit内は入れ子divのため終了タグでは切れない）
     const segments = cell.split(/(?=<div[^>]*\bjob_unit\b)/).slice(1);
     for (const seg of segments) {
       const idMatch = seg.match(/refScheduleView\?scheduleId=(\d+)[^>]*>([\s\S]*?)<\/a>/);
       if (!idMatch) continue; // ToDoチェックボックス等・予定以外
       const sourceId = `s${idMatch[1]}`;
-      if (seen.has(sourceId)) continue; // 複数日予定は最初の出現（開始日側）のみ
+      if (seen.has(sourceId)) continue; // 複数日予定は最初の出現（今日以降で最も早いセル）のみ
       const name = textOf(idMatch[2]);
       if (!name) continue;
       const rawTime = textOf((seg.match(/\bjob_time\b[^>]*>([\s\S]*?)<\/div>/) || [, ''])[1]);
