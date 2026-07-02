@@ -1,0 +1,54 @@
+<!-- マイ顧問 /groupware/listTodo の実DOM構造（2026-07-02採取）を再現したテストfixture。
+     名称・IDはすべてダミー。実データ（顧問先名等）は絶対に入れないこと（公開リポジトリのため）。 -->
+<table class="list_table">
+  <thead>
+    <tr>
+      <th></th><th>タイトル</th><th>予定日</th><th>期限</th><th>カテゴリ</th><th>優先度</th><th>状態</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="todo_row todo_unit" id="todo_11111111">
+      <td class="state"><input type="checkbox" class="checkbox02 confirm_off"></td>
+      <td class="title">
+        <a href="/groupware/refTodoView?todoId=11111111">(株)ダミー商事／単発相談</a>
+        <span class="g_ic has_tooltip ic_memo"></span>
+      </td>
+      <td class="nowrap_center todo_date plan"><span class=""><i class="far fa-calendar-alt"></i></span></td>
+      <td class="nowrap_center todo_date limit"><span class="date_none"><i class="far fa-calendar-alt"></i></span></td>
+      <td class="nowrap_center category"></td>
+      <td class="nowrap_center"><div class="priority priority_03 todo_priority_change"><span class="priority_label_high">高</span></div></td>
+      <td class="nowrap_center complete_state">
+        <span class="complete_status_view">未完了</span>
+        <select class="complete_status"><option>未完了</option><option>完了</option><option>10％</option><option>50％</option></select>
+      </td>
+    </tr>
+    <tr class="todo_row todo_unit" id="todo_22222222">
+      <td class="state"><input type="checkbox" class="checkbox02 confirm_off"></td>
+      <td class="title">
+        <a href="/groupware/refTodoView?todoId=22222222">(株)サンプル製作所／月次監査 &amp; 資料回収</a>
+      </td>
+      <td class="nowrap_center todo_date plan ng date_20260715"><span class="plan_date_ng">2026/07/15</span></td>
+      <td class="nowrap_center todo_date limit ng date_20260710"><span class="date_ng">2026/07/10</span></td>
+      <td class="nowrap_center category">月次</td>
+      <td class="nowrap_center"><div class="priority priority_00 todo_priority_change"><span class="priority_label_none">－</span></div></td>
+      <td class="nowrap_center complete_state">
+        <span class="complete_status_view">未完了</span>
+        <select class="complete_status"><option>未完了</option><option>完了</option></select>
+      </td>
+    </tr>
+    <tr class="todo_row todo_unit" id="todo_33333333">
+      <td class="state"><input type="checkbox" class="checkbox02 confirm_off"></td>
+      <td class="title">
+        <a href="/groupware/refTodoView?todoId=33333333">(有)テスト工業／完了済みの仕事</a>
+      </td>
+      <td class="nowrap_center todo_date plan date_20260601"><span class="plan_date_ng">2026/06/01</span></td>
+      <td class="nowrap_center todo_date limit"><span class="date_none"><i class="far fa-calendar-alt"></i></span></td>
+      <td class="nowrap_center category"></td>
+      <td class="nowrap_center"><div class="priority priority_03 todo_priority_change"><span class="priority_label_high">高</span></div></td>
+      <td class="nowrap_center complete_state">
+        <span class="complete_status_view">完了</span>
+        <select class="complete_status"><option>未完了</option><option selected>完了</option></select>
+      </td>
+    </tr>
+  </tbody>
+</table>
