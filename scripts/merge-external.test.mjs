@@ -11,7 +11,7 @@ const doc = () => ({ tasks: [
 const ev = (over = {}) => ({ sourceId: 'ev1_20260703', name: '例会', due: '2026-07-03',
   time: '18:00', memo: '会場A', tags: ['予定'], ...over });
 
-test('新規イベントはタスクとして追加される（📅時刻プレフィックス・order採番）', () => {
+test('新規イベントは schedule として追加される（📅時刻プレフィックス・order採番）', () => {
   const r = mergeExternal(doc(), [ev()], 'gcal', NOW);
   assert.equal(r.added, 1);
   const t = r.doc.tasks.find((x) => x.id === externalId('gcal', 'ev1_20260703'));
@@ -125,4 +125,27 @@ test('nameとmemoはtrimされ、空白のみのnameはスキップされる', (
   const t = r.doc.tasks.find((x) => x.id === externalId('gcal', 'ev1_20260703'));
   assert.equal(t.name, '📅 18:00 例会');
   assert.equal(t.memo, '会場A');
+});
+
+test('予定タグ付き新規は itemType:schedule で追加される', () => {
+  const r = mergeExternal(doc(), [ev()], 'gcal', NOW); // ev() は tags:['予定']
+  const t = r.doc.tasks.find((x) => x.id === externalId('gcal', 'ev1_20260703'));
+  assert.equal(t.itemType, 'schedule');
+});
+
+test('予定タグを持たない取込は itemType:task のまま', () => {
+  const r = mergeExternal(doc(), [{ sourceId: 'mk9', name: '月次監査', tags: ['会計事務所'] }], 'mykomon', NOW);
+  const t = r.doc.tasks.find((x) => x.id === externalId('mykomon', 'mk9'));
+  assert.equal(t.itemType, 'task');
+});
+
+test('既存が task の予定アイテムは再取込で itemType:schedule に再分類される（updated）', () => {
+  const id = externalId('gcal', 'ev1_20260703');
+  const legacy = { id, name: '📅 18:00 例会', status: '未着手', priority: '🟢 中',
+    tags: ['予定'], due: '2026-07-03', memo: '会場A', itemType: 'task', isProject: false,
+    subtasks: [], createdAt: NOW, completedAt: null, order: 1 };
+  const r = mergeExternal({ tasks: [legacy] }, [ev()], 'gcal', NOW);
+  const t = r.doc.tasks.find((x) => x.id === id);
+  assert.equal(t.itemType, 'schedule');
+  assert.equal(r.updated, 1);
 });

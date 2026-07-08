@@ -37,6 +37,7 @@ export function mergeExternal(doc, items, source, nowIso) {
       ? `${prefix} ${item.time ? item.time + ' ' : ''}${rawName}`
       : rawName;
     const memo = String(item.memo ?? '').trim();
+    const itemType = (Array.isArray(item.tags) && item.tags.includes('予定')) ? 'schedule' : 'task';
     const existing = byId.get(id);
 
     if (!existing) {
@@ -48,7 +49,7 @@ export function mergeExternal(doc, items, source, nowIso) {
         tags: Array.isArray(item.tags) ? [...item.tags] : [],
         due,
         memo,
-        itemType: 'task', isProject: false, subtasks: [],
+        itemType, isProject: false, subtasks: [],
         createdAt: nowIso, completedAt: null,
         order: maxOrder,
       };
@@ -60,9 +61,10 @@ export function mergeExternal(doc, items, source, nowIso) {
       // 取込のたびに元データ側の値で更新する。status/priority/tags/subtasks 等の
       // ユーザー操作フィールドには触れない（競合リトライ時も同じ規則が適用される）。
       const changed = existing.name !== name || existing.due !== due
-        || (existing.memo ?? '') !== memo;
+        || (existing.memo ?? '') !== memo || existing.itemType !== itemType;
       if (changed) {
         existing.name = name; existing.due = due; existing.memo = memo;
+        existing.itemType = itemType;
         result.updated++;
       } else {
         result.skipped++;
