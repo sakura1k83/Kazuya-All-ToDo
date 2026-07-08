@@ -3121,8 +3121,13 @@ function openAddModal() {
 function openScheduleDetail(id) {
   const t = tasks.find(x => x.id === id);
   if (!t) return;
-  const d = t.due ? new Date(t.due + 'T00:00:00') : null;
-  const dateText = d ? `${d.getMonth()+1}/${d.getDate()}（${['日','月','火','水','木','金','土'][d.getDay()]}）${formatDueText(t.due)}` : '日付なし';
+  const d = parseDateOnly(t.due);
+  let dateText = '日付なし';
+  if (d) {
+    const diff = dateDiffFromToday(t.due);
+    const rel = diff === 0 ? '今日' : diff === 1 ? '明日' : diff > 0 ? `${diff}日後` : `${-diff}日前`;
+    dateText = `${d.getMonth()+1}/${d.getDate()}（${['日','月','火','水','木','金','土'][d.getDay()]}）${rel}`;
+  }
   document.getElementById('sd-date').textContent = dateText;
   document.getElementById('sd-name').textContent = t.name || '';
   document.getElementById('sd-memo').textContent = t.memo || '';
