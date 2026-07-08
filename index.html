@@ -2568,7 +2568,7 @@ function inferProjectName(task) {
 function renderProjectGuide() {
   const target = document.getElementById('guide-projects');
   if (!target) return;
-  const active = tasks.filter(t => t.status !== '完了');
+  const active = tasks.filter(t => t.status !== '完了' && getItemType(t) === 'task');
   const projectMap = new Map();
   active.forEach(task => {
     const name = inferProjectName(task);
@@ -2600,7 +2600,7 @@ function toggleGuidePanel() {
 }
 function renderSchedules() {
   const activeDueTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了' && t.due));
-  const activeTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了'));
+  const activeTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了' && getItemType(t) === 'task'));
   const today = new Date();
   today.setHours(0,0,0,0);
   const baseDay = new Date(today);
