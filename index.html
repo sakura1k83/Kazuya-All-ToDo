@@ -2272,6 +2272,7 @@ function fetchWithTimeout(url, options = {}, ms = 15000) {
   return fetch(url, { ...options, signal: ctrl.signal }).finally(() => clearTimeout(tid));
 }
 function getItemType(task) {
+  if (Array.isArray(task.tags) && task.tags.includes('予定')) return 'schedule';
   if (task.itemType) return task.itemType;
   if (task.isProject) return 'project';
   return 'task';
@@ -2623,7 +2624,7 @@ function toggleGuidePanel() {
   panel.classList.toggle('open');
 }
 function renderSchedules() {
-  const activeDueTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了' && t.due));
+  const activeDueTasks = sortByDueThenPriority(tasks.filter(t => t.due && (getItemType(t) === 'schedule' || t.status !== '完了')));
   const activeTasks = sortByDueThenPriority(tasks.filter(t => t.status !== '完了' && getItemType(t) === 'task'));
   const today = new Date();
   today.setHours(0,0,0,0);
@@ -2633,7 +2634,7 @@ function renderSchedules() {
     const d = new Date(baseDay);
     d.setDate(baseDay.getDate() + index);
     const key = d.toLocaleDateString('sv');
-    const completedOnDay = tasks.filter(t => t.status === '完了' && t.completedAt && new Date(t.completedAt).toLocaleDateString('sv') === key);
+    const completedOnDay = tasks.filter(t => t.status === '完了' && getItemType(t) === 'task' && t.completedAt && new Date(t.completedAt).toLocaleDateString('sv') === key);
     // 日毎の並びは先頭の時刻（例 9:00 / 📅 18:00）の早い順。時刻なしは末尾（安定ソートで従来順を保持）。
     const timeOf = (t) => { const m = String(t.name || '').replace(/^\s*📅\s*/, '').match(/^(\d{1,2}):(\d{2})/); return m ? (+m[1]) * 60 + (+m[2]) : Infinity; };
     const items = [...activeDueTasks.filter(t => t.due === key), ...completedOnDay].sort((a, b) => timeOf(a) - timeOf(b));
@@ -2941,7 +2942,7 @@ function renderTasks() {
     return true;
   }));
 
-  updateFilterSummary(base.length, tasks.filter(t => t.status !== '完了').length, false);
+  updateFilterSummary(base.length, tasks.filter(t => t.status !== '完了' && getItemType(t) === 'task').length, false);
 
   if (!base.length && !doneBase.length) { showState('empty'); return; }
 

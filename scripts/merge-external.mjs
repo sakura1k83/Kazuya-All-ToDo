@@ -55,7 +55,9 @@ export function mergeExternal(doc, items, source, nowIso) {
       };
       tasks.push(task); byId.set(id, task); result.added++;
     } else if (existing.completedAt || existing.status === '完了') {
-      result.skipped++; // 完了済みは復活・変更させない
+      // 完了済みは name/due/memo/status は触らないが、予定タグに応じた itemType 補正だけは行う
+      if (existing.itemType !== itemType) { existing.itemType = itemType; result.updated++; }
+      else { result.skipped++; }
     } else {
       // 契約: 取込タスクの name/due/memo は元システム（カレンダー等）が正であり、
       // 取込のたびに元データ側の値で更新する。status/priority/tags/subtasks 等の
