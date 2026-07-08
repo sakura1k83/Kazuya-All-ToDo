@@ -743,6 +743,9 @@ button { font-family: inherit; }
 .schedule-chip.p2::before { background: var(--p2); }
 .schedule-chip.p3::before { background: var(--p3); }
 .schedule-chip.done { text-decoration: line-through; opacity: 0.55; }
+.schedule-chip--event { border-style: dashed; }
+.schedule-chip--event::before { background: var(--accent); }
+.schedule-chip--event .sc-ico { flex-shrink: 0; font-size: var(--text-caption); line-height: 1.45; }
 .schedule-empty {
   font-size: 11.5px;
   color: var(--text-3);
@@ -1441,6 +1444,15 @@ button { font-family: inherit; }
 }
 .modal-close:hover { background: var(--border); color: var(--text); }
 
+.sched-detail { position: fixed; inset: 0; background: var(--overlay-backdrop); display: flex; align-items: center; justify-content: center; z-index: var(--z-modal); }
+.sched-detail[hidden] { display: none; }
+.sched-detail-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-5); width: min(360px, 90vw); box-shadow: var(--shadow-overlay); }
+.sched-detail-date { font-size: var(--text-caption); color: var(--text-3); }
+.sched-detail-name { font-size: var(--text-body-lg); font-weight: var(--weight-semibold); margin: var(--space-1) 0 var(--space-3); color: var(--text); }
+.sched-detail-memo { font-size: var(--text-body-sm); color: var(--text-2); white-space: pre-wrap; }
+.sched-detail-note { font-size: var(--text-caption); color: var(--text-3); margin-top: var(--space-4); }
+.sched-detail-close { margin-top: var(--space-4); padding: var(--space-2) var(--space-4); border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--surface-2); color: var(--text); cursor: pointer; }
+
 .fg { margin-bottom: 14px; }
 .fg label {
   display: block;
@@ -1976,6 +1988,16 @@ textarea.fc { resize: vertical; min-height: 68px; line-height: 1.55; }
       <button class="btn btn-subtle" onclick="closeModal()">キャンセル</button>
       <button class="btn btn-solid" onclick="saveTask()">保存</button>
     </div>
+  </div>
+</div>
+
+<div id="schedule-detail" class="sched-detail" hidden onclick="if(event.target===this)closeScheduleDetail()">
+  <div class="sched-detail-card" role="dialog" aria-modal="true">
+    <div class="sched-detail-date" id="sd-date"></div>
+    <div class="sched-detail-name" id="sd-name"></div>
+    <div class="sched-detail-memo" id="sd-memo"></div>
+    <div class="sched-detail-note">マイ顧問／カレンダーと同期・自動更新（編集不可）</div>
+    <button type="button" class="sched-detail-close" onclick="closeScheduleDetail()">閉じる</button>
   </div>
 </div>
 
@@ -2622,7 +2644,10 @@ function renderSchedules() {
           <span class="week-count">${items.length ? `${items.length}件` : ''}</span>
         </div>
         <div class="schedule-task-list">
-          ${items.length ? items.map(t => `<button class="schedule-chip ${P_CLASS[t.priority] || ''}${t.status === '完了' ? ' done' : ''}" onclick="openEditModal('${t.id}')" title="クリックして編集">${escHtml(t.name)}</button>`).join('') : '<div class="schedule-empty">予定なし</div>'}
+          ${items.length ? items.map(t => getItemType(t) === 'schedule'
+            ? `<button class="schedule-chip schedule-chip--event" onclick="openScheduleDetail('${t.id}')" title="予定の詳細"><span class="sc-ico">📅</span>${escHtml(t.name)}</button>`
+            : `<button class="schedule-chip ${P_CLASS[t.priority] || ''}${t.status === '完了' ? ' done' : ''}" onclick="openEditModal('${t.id}')" title="クリックして編集">${escHtml(t.name)}</button>`
+          ).join('') : '<div class="schedule-empty">予定なし</div>'}
         </div>
       </div>`;
   }).join('');
@@ -3093,6 +3118,20 @@ function openAddModal() {
   setTimeout(() => document.getElementById('f-name').focus(), 150);
 }
 
+function openScheduleDetail(id) {
+  const t = tasks.find(x => x.id === id);
+  if (!t) return;
+  const d = t.due ? new Date(t.due + 'T00:00:00') : null;
+  const dateText = d ? `${d.getMonth()+1}/${d.getDate()}（${['日','月','火','水','木','金','土'][d.getDay()]}）${formatDueText(t.due)}` : '日付なし';
+  document.getElementById('sd-date').textContent = dateText;
+  document.getElementById('sd-name').textContent = t.name || '';
+  document.getElementById('sd-memo').textContent = t.memo || '';
+  document.getElementById('schedule-detail').hidden = false;
+}
+function closeScheduleDetail() {
+  document.getElementById('schedule-detail').hidden = true;
+}
+
 function openEditModal(id) {
   const t = tasks.find(x => x.id === id);
   if (!t) return;
@@ -3242,6 +3281,7 @@ document.getElementById('task-modal').addEventListener('click', function(e) {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     closeModal();
+    closeScheduleDetail();
     document.getElementById('guide-float')?.classList.remove('open');
   }
 });
