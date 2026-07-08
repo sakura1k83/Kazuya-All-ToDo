@@ -2650,7 +2650,7 @@ function renderSchedules() {
         </div>
         <div class="schedule-task-list">
           ${items.length ? items.map(t => getItemType(t) === 'schedule'
-            ? `<button class="schedule-chip schedule-chip--event" onclick="openScheduleDetail('${t.id}')" title="予定の詳細"><span class="sc-ico">📅</span>${escHtml(t.name)}</button>`
+            ? `<button class="schedule-chip schedule-chip--event" onclick="openScheduleDetail('${t.id}')" title="予定の詳細"><span class="sc-ico">📅</span>${escHtml(String(t.name || '').replace(/^\s*📅\s*/, ''))}</button>`
             : `<button class="schedule-chip ${P_CLASS[t.priority] || ''}${t.status === '完了' ? ' done' : ''}" onclick="openEditModal('${t.id}')" title="クリックして編集">${escHtml(t.name)}</button>`
           ).join('') : '<div class="schedule-empty">予定なし</div>'}
         </div>
